@@ -1,8 +1,6 @@
-=============================================
-=== pdf.js Viewer Plugin
-=== A pdf.js-based PDF viewer for OJS 2.4.x
-=== Author: Alec Smecher <alec@smecher.bc.ca>
-=============================================
+pdf.js Viewer Plugin
+A pdf.js-based PDF viewer for OJS 2.4.x
+Author: Alec Smecher <alec@smecher.bc.ca>
 
 About
 -----
