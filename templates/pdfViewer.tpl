@@ -1,5 +1,5 @@
 {**
- * plugins/generic/pdfJsViewer/index.tpl
+ * plugins/generic/pdfJsViewer/templates/pdfViewer.tpl
  *
  * Copyright (c) 2013-2014 Simon Fraser University Library
  * Copyright (c) 2003-2014 John Willinsky
@@ -8,13 +8,8 @@
  * Embedded PDF viewer using pdf.js.
  *}
 
-<div id="pdfDownloadLinkContainer">
-	<a class="action pdf" id="pdfDownloadLink" target="_parent" href="{url op="download" path=$articleId|to_array:$galley->getBestGalleyId($currentJournal)}">{translate key="article.pdf.download"}</a>
-</div>
-
+{*
 <script type="text/javascript" src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/build/pdf.js"></script>
-
-{url|assign:"pdfUrl" op="viewFile" path=$articleId|to_array:$galley->getBestGalleyId($currentJournal) escape=false}
 <script type="text/javascript">
 	{literal}
 		$(document).ready(function() {
@@ -22,13 +17,12 @@
 			PDFJS.getDocument({/literal}'{$pdfUrl|escape:"javascript"}'{literal}).then(function(pdf) {
 				// Using promise to fetch the page
 				pdf.getPage(1).then(function(page) {
-					var scale = 1.5;
-					var viewport = page.getViewport(scale);
-					var canvas = document.getElementById('pdfCanvas');
-					var context = canvas.getContext('2d');
 					var pdfCanvasContainer = $('#pdfCanvasContainer');
+					var canvas = document.getElementById('pdfCanvas');
 					canvas.height = pdfCanvasContainer.height();
 					canvas.width = pdfCanvasContainer.width()-2; // 1px border each side
+					var viewport = page.getViewport(canvas.width / page.getViewport(1.0).width);
+					var context = canvas.getContext('2d');
 					var renderContext = {
 						canvasContext: context,
 						viewport: viewport
@@ -39,7 +33,8 @@
 		});
 	{/literal}
 </script>
+<script type="text/javascript" src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.js"></script> *}
 
-<div id="pdfCanvasContainer" style="min-height: 500px;">
-	<canvas id="pdfCanvas" style="border:1px solid black;"/>
+<div id="pdfCanvasContainer">
+	<iframe src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe> 
 </div>

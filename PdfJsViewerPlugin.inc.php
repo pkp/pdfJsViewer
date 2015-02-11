@@ -27,14 +27,25 @@ class PdfJsViewerPlugin extends GenericPlugin {
 		return false;
 	}
 
+	/**
+	 * @copydoc Plugin::getDisplayName
+	 */
 	function getDisplayName() {
 		return __('plugins.generic.pdfJsViewer.name');
 	}
 
+	/**
+	 * @copydoc Plugin::getDescription
+	 */
 	function getDescription() {
 		return __('plugins.generic.pdfJsViewer.description');
 	}
 
+	/**
+	 * Hook callback function for TemplateManager::include
+	 * @param $hookName string Hook name
+	 * @param $args array Hook arguments
+	 */
 	function _includeCallback($hookName, $args) {
 		if ($this->getEnabled()) {
 			$templateMgr =& $args[0];
@@ -44,13 +55,20 @@ class PdfJsViewerPlugin extends GenericPlugin {
 
 			switch ($params['smarty_include_tpl_file']) {
 				case 'article/pdfViewer.tpl':
-					$params['smarty_include_tpl_file'] = $this->getTemplatePath() . 'index.tpl';
+					$templatePath = $this->getTemplatePath();
+					$templateMgr->assign('pluginTemplatePath', $templatePath);
+					$params['smarty_include_tpl_file'] = $templatePath . 'articleGalley.tpl';
 					break;
 			}
 			return false;
 		}
 	}
 
+	/**
+	 * Hook callback function for TemplateManager::display
+	 * @param $hookName string Hook name
+	 * @param $args array Hook arguments
+	 */
 	function _displayCallback($hookName, $args) {
 		if ($this->getEnabled()) {
 			$templateMgr =& $args[0];
@@ -58,11 +76,21 @@ class PdfJsViewerPlugin extends GenericPlugin {
 
 			switch ($template) {
 				case 'issue/issueGalley.tpl':
-					$template = $this->getTemplatePath() . 'issueGalley.tpl';
+					$templatePath = $this->getTemplatePath();
+					$templateMgr->assign('pluginTemplatePath', $templatePath);
+					$template = $templatePath . 'issueGalley.tpl';
 					break;
 			}
 			return false;
 		}
+	}
+
+	/**
+	 * Get the template path
+	 * @return string
+	 */
+	function getTemplatePath() {
+		return parent::getTemplatePath() . 'templates/';
 	}
 }
 
