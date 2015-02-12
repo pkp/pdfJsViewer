@@ -9,11 +9,11 @@
  *}
 
 {*
-<script type="text/javascript" src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/build/pdf.js"></script>
+<script type="text/javascript" src="{$pluginUrl}/pdf.js/build/pdf.js"></script>
 <script type="text/javascript">
 	{literal}
 		$(document).ready(function() {
-			PDFJS.workerSrc='{/literal}{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/build/pdf.worker.js{literal}';
+			PDFJS.workerSrc='{/literal}{$pluginUrl}/pdf.js/build/pdf.worker.js{literal}';
 			PDFJS.getDocument({/literal}'{$pdfUrl|escape:"javascript"}'{literal}).then(function(pdf) {
 				// Using promise to fetch the page
 				pdf.getPage(1).then(function(page) {
@@ -33,8 +33,8 @@
 		});
 	{/literal}
 </script>
-<script type="text/javascript" src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.js"></script> *}
+<script type="text/javascript" src="{$pluginUrl}/pdf.js/web/viewer.js"></script> *}
 
 <div id="pdfCanvasContainer">
-	<iframe src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe> 
+	<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe> 
 </div>

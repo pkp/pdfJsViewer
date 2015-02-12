@@ -15,6 +15,12 @@
 import('lib.pkp.classes.plugins.GenericPlugin');
 
 class PdfJsViewerPlugin extends GenericPlugin {
+	/**
+	 * Register the plugin.
+	 * @param $category string Plugin category
+	 * @param $path string Plugin path
+	 * @return boolean true for success
+	 */
 	function register($category, $path) {
 		if (parent::register($category, $path)) {
 			if ($this->getEnabled()) {
@@ -57,6 +63,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				case 'article/pdfViewer.tpl':
 					$templatePath = $this->getTemplatePath();
 					$templateMgr->assign('pluginTemplatePath', $templatePath);
+					$templateMgr->assign('pluginUrl', Request::getBaseUrl() . DIRECTORY_SEPARATOR . $this->getPluginPath());
 					$params['smarty_include_tpl_file'] = $templatePath . 'articleGalley.tpl';
 					break;
 			}
@@ -78,6 +85,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				case 'issue/issueGalley.tpl':
 					$templatePath = $this->getTemplatePath();
 					$templateMgr->assign('pluginTemplatePath', $templatePath);
+					$templateMgr->assign('pluginUrl', Request::getBaseUrl() . DIRECTORY_SEPARATOR . $this->getPluginPath());
 					$template = $templatePath . 'issueGalley.tpl';
 					break;
 			}
