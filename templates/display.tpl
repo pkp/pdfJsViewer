@@ -1,5 +1,5 @@
 {**
- * plugins/viewableFile/pdfArticleGalley/display.tpl
+ * plugins/viewableFiles/pdfJsViewer/display.tpl
  *
  * Copyright (c) 2014-2015 Simon Fraser University Library
  * Copyright (c) 2003-2015 John Willinsky
@@ -8,7 +8,6 @@
  * Embedded viewing of a PDF galley.
  *}
 {if $galley}
-	{url|assign:"pdfUrl" op="download" path=$article->getBestArticleId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal):$firstGalleyFile->getId() escape=false}
 	<script type="text/javascript" src="{$pluginUrl}/pdf.js/build/pdf.js"></script>
 	<script type="text/javascript">
 		{literal}

@@ -30,17 +30,44 @@ class PdfJsViewerPlugin extends ViewableFilePlugin {
 	}
 
 	/**
-	 * @see ViewableFilePlugin::displayArticleGalley
+	 * Determine whether this plugin can handle the specified content.
+	 * @param $galley ArticleGalley|IssueGalley
+	 * @return boolean True iff the plugin can handle the content
 	 */
-	function displayArticleGalley($templateMgr, $request, $params) {
-		$templatePath = $this->getTemplatePath();
-		$templateMgr->assign('pluginTemplatePath', $templatePath);
-		$templateMgr->assign('pluginUrl', $request->getBaseUrl() . '/' . $this->getPluginPath());
-		$galley = $templateMgr->get_template_vars('galley');
+	function canHandle($galley) {
+		if (is_a($galley, 'ArticleGalley') && $galley->getGalleyType() == $this->getName()) {
+			return true;
+		} elseif (is_a($galley, 'IssueGalley') && $galley->getFileType() == 'application/pdf') {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @copydoc ViewableFilePlugin::displayArticleGalley
+	 */
+	function displayArticleGalley($request, $issue, $article, $galley) {
+		$templateMgr = TemplateManager::getManager($request);
 		$galleyFiles = $galley->getLatestGalleyFiles();
 		assert(count($galleyFiles)==1);
-		$templateMgr->assign('firstGalleyFile', array_shift($galleyFiles));
-		return parent::displayArticleGalley($templateMgr, $request, $params);
+		$templateMgr->assign(array(
+			'pluginTemplatePath' => $this->getTemplatePath(),
+			'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
+			'firstGalleyFile' => array_shift($galleyFiles),
+		));
+		return parent::displayArticleGalley($request, $issue, $article, $galley);
+	}
+
+	/**
+	 * @copydoc ViewableFilePlugin::displayArticleGalley
+	 */
+	function displayIssueGalley($request, $issue, $galley) {
+		$templateMgr = TemplateManager::getManager($request);
+		$templateMgr->assign(array(
+			'pluginTemplatePath' => $this->getTemplatePath(),
+			'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
+		));
+		return parent::displayIssueGalley($request, $issue, $galley);
 	}
 
 	/**
