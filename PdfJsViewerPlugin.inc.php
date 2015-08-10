@@ -12,27 +12,9 @@
  * @brief This plugin enables embedding of the pdf.js viewer for PDF display
  */
 
-import('lib.pkp.classes.plugins.GenericPlugin');
+import('classes.plugins.ViewableFilePlugin');
 
-class PdfJsViewerPlugin extends GenericPlugin {
-	/**
-	 * Register the plugin.
-	 * @param $category string Plugin category
-	 * @param $path string Plugin path
-	 * @return boolean true for success
-	 */
-	function register($category, $path) {
-		if (parent::register($category, $path)) {
-			if ($this->getEnabled()) {
-				HookRegistry::register('TemplateManager::include', array(&$this, '_includeCallback'));
-				HookRegistry::register('TemplateManager::display', array(&$this, '_displayCallback'));
-			}
-
-			return true;
-		}
-		return false;
-	}
-
+class PdfJsViewerPlugin extends ViewableFilePlugin {
 	/**
 	 * @copydoc Plugin::getDisplayName
 	 */
@@ -48,49 +30,17 @@ class PdfJsViewerPlugin extends GenericPlugin {
 	}
 
 	/**
-	 * Hook callback function for TemplateManager::include
-	 * @param $hookName string Hook name
-	 * @param $args array Hook arguments
+	 * @see ViewableFilePlugin::displayArticleGalley
 	 */
-	function _includeCallback($hookName, $args) {
-		if ($this->getEnabled()) {
-			$templateMgr =& $args[0];
-			$params =& $args[1];
-
-			if (!isset($params['smarty_include_tpl_file'])) return false;
-
-			switch ($params['smarty_include_tpl_file']) {
-				case 'article/pdfViewer.tpl':
-					$templatePath = $this->getTemplatePath();
-					$templateMgr->assign('pluginTemplatePath', $templatePath);
-					$templateMgr->assign('pluginUrl', Request::getBaseUrl() . DIRECTORY_SEPARATOR . $this->getPluginPath());
-					$params['smarty_include_tpl_file'] = $templatePath . 'articleGalley.tpl';
-					break;
-			}
-			return false;
-		}
-	}
-
-	/**
-	 * Hook callback function for TemplateManager::display
-	 * @param $hookName string Hook name
-	 * @param $args array Hook arguments
-	 */
-	function _displayCallback($hookName, $args) {
-		if ($this->getEnabled()) {
-			$templateMgr =& $args[0];
-			$template =& $args[1];
-
-			switch ($template) {
-				case 'issue/issueGalley.tpl':
-					$templatePath = $this->getTemplatePath();
-					$templateMgr->assign('pluginTemplatePath', $templatePath);
-					$templateMgr->assign('pluginUrl', Request::getBaseUrl() . DIRECTORY_SEPARATOR . $this->getPluginPath());
-					$template = $templatePath . 'issueGalley.tpl';
-					break;
-			}
-			return false;
-		}
+	function displayArticleGalley($templateMgr, $request, $params) {
+		$templatePath = $this->getTemplatePath();
+		$templateMgr->assign('pluginTemplatePath', $templatePath);
+		$templateMgr->assign('pluginUrl', $request->getBaseUrl() . '/' . $this->getPluginPath());
+		$galley = $templateMgr->get_template_vars('galley');
+		$galleyFiles = $galley->getLatestGalleyFiles();
+		assert(count($galleyFiles)==1);
+		$templateMgr->assign('firstGalleyFile', array_shift($galleyFiles));
+		return parent::displayArticleGalley($templateMgr, $request, $params);
 	}
 
 	/**
