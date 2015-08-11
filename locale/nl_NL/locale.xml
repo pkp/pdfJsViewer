@@ -12,6 +12,6 @@
   -->
 
 <locale name="nl_NL" full_name="Nederlands">
-	<message key="plugins.generic.pdfJsViewer.name">PDF.JS PDF Viewer Plugin</message>
+	<message key="plugins.generic.pdfJsViewer.name">PDF.JS PDF Viewer</message>
 	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Deze plugin gebruikt de <a href="http://mozilla.github.io/pdf.js">pdf.js PDF viewer</a> om PDFs te tonen op de artikel en nummer-proef pagina's.]]></message>
 </locale>

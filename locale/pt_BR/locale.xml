@@ -12,6 +12,6 @@
   -->
 
 <locale name="pt_BR" full_name="Português (Brasil)">
-	<message key="plugins.generic.pdfJsViewer.name">PDF.JS PDF Viewer Plugin</message>
+	<message key="plugins.generic.pdfJsViewer.name">PDF.JS PDF Viewer</message>
 	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Este plugin usa o <a href="http://mozilla.github.io/pdf.js">pdf.js PDF viewer</a> para embutir PDFs nas páginas de visualização dos artigos.]]></message>
 </locale>
