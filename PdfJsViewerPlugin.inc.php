@@ -16,6 +16,14 @@ import('classes.plugins.ViewableFilePlugin');
 
 class PdfJsViewerPlugin extends ViewableFilePlugin {
 	/**
+	 * Install default settings on journal creation.
+	 * @return string
+	 */
+	function getContextSpecificPluginSettingsFile() {
+		return $this->getPluginPath() . '/settings.xml';
+	}
+
+	/**
 	 * @copydoc Plugin::getDisplayName
 	 */
 	function getDisplayName() {
