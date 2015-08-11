@@ -7,7 +7,50 @@
  *
  * Embedded viewing of a PDF galley.
  *}
-{if $galley}
+<!DOCTYPE html>
+<html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{translate key="article.pageTitle" title=$title}</title>
+	<meta name="description" content="{$metaSearchDescription|escape}" />
+	<meta name="keywords" content="{$metaSearchKeywords|escape}" />
+	<meta name="generator" content="{$applicationName} {$currentVersionString|escape}" />
+	{$metaCustomHeaders}
+	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
+
+	{load_stylesheet context="frontend" stylesheets=$stylesheets}
+</head>
+<body class="pkp_page_{$requestedPage|escape} pkp_op_{$requestedOp|escape}">
+
+	{* Header wrapper *}
+	<header class="header_view_pdf">
+
+		<a href="{$parentUrl}" class="return">
+			<span class="pkp_screen_reader">
+				{if $parent instanceOf Issue}
+					{translate key="issue.return"}
+				{else}
+					{translate key="article.return"}
+				{/if}
+			</span>
+		</a>
+
+		<a href="{$parentUrl}" class="title">
+			{$title}
+		</a>
+
+		<a href="{$pdfUrl}" class="download" download>
+			<span class="label">
+				{translate key="common.download"}
+			</span>
+			<span class="pkp_screen_reader">
+				{translate key="common.downloadPdf"}
+			</span>
+		</a>
+
+	</header>
+
 	<script type="text/javascript" src="{$pluginUrl}/pdf.js/build/pdf.js"></script>
 	<script type="text/javascript">
 		{literal}
@@ -37,4 +80,8 @@
 	<div id="pdfCanvasContainer">
 		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe> 
 	</div>
-{/if}
+
+	{call_hook name="Templates::Common::Footer::PageFooter"}
+
+</body>
+</html>

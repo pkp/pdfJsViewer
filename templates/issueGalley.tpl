@@ -7,11 +7,6 @@
  *
  * Embedded viewing of a PDF galley.
  *}
-{include file="common/frontend/header.tpl" pageTitleTranslated=$issue->getIssueSeries()|escape}
-
-<div class="page">
-	{url|assign:"pdfUrl" op="download" path=$issue->getBestIssueId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal) escape=false}
-	{include file="$pluginTemplatePath/display.tpl" pdfUrl=$pdfUrl}
-</div>
-
-{include file="common/frontend/footer.tpl"}
+{url|assign:"pdfUrl" op="download" path=$issue->getBestIssueId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal) escape=false}
+{url|assign:"parentUrl" page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}
+{include file="$pluginTemplatePath/display.tpl" title=$issue->getIssueSeries() parentUrl=$parentUrl pdfUrl=$pdfUrl}
