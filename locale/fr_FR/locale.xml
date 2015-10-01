@@ -11,7 +11,7 @@
   * Localization strings
   -->
 
-<locale name="fr_FR" full_name="Français (Canada)">
+<locale name="fr_FR" full_name="Français (France)">
 	<message key="plugins.generic.pdfJsViewer.name">Plugicie PDF.JS l visionneuse de PDF</message>
 	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Ce plugin utilise la <a href="http://mozilla.github.io/pdf.js">visionneuse de PDF</a> qui embarque les fichiers PDF de l'article et les pages de visualisation des épreuves.]]></message>
 </locale>
