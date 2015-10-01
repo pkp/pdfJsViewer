@@ -8,11 +8,11 @@
   * Copyright (c) 2003-2014 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the ru_RU (Russian) locale.
+  * Localization strings for the ru_RU (Русский) locale.
   * Translated by Pavel Pisklakov. 
   -->
 
-<locale name="ru_RU" full_name="Russian">
+<locale name="ru_RU" full_name="Русский">
 	<message key="plugins.generic.pdfJsViewer.name">Плагин «PDF-просмотрщик PDF.JS»</message>
 	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Этот плагин использует <a href="http://mozilla.github.io/pdf.js">PDF-просмотрщик pdf.js</a> для встраивания PDF-файлов на страницы просмотра гранок статьи и выпуска.]]></message>
 </locale>
