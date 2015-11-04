@@ -1,19 +1,12 @@
 {**
- * plugins/generic/pdfJsViewer/templates/issueGalley.tpl
+ * plugins/viewableFiles/pdfJsViewer/issueGalley.tpl
  *
- * Copyright (c) 2013-2014 Simon Fraser University Library
- * Copyright (c) 2003-2014 John Willinsky
+ * Copyright (c) 2014-2015 Simon Fraser University Library
+ * Copyright (c) 2003-2015 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
- * Issue galley view for PDF files (embedded using pdf.js).
+ * Embedded viewing of a PDF galley.
  *}
-{include file="issue/header.tpl"}
-{url|assign:"pdfUrl" op="viewFile" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
-
-<div id="pdfDownloadLinkContainer">
-	<a class="action pdf" id="pdfDownloadLink" target="_parent" href="{url op="download" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}">{translate key="article.pdf.download"}</a>
-</div>
-
-{include file="$pluginTemplatePath/pdfViewer.tpl" pdfUrl=$pdfUrl}
-
-{include file="common/footer.tpl"}
+{url|assign:"pdfUrl" op="download" path=$issue->getBestIssueId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal) escape=false}
+{url|assign:"parentUrl" page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}
+{include file="$pluginTemplatePath/display.tpl" title=$issue->getIssueSeries() parentUrl=$parentUrl pdfUrl=$pdfUrl}

@@ -12,25 +12,15 @@
  * @brief This plugin enables embedding of the pdf.js viewer for PDF display
  */
 
-import('lib.pkp.classes.plugins.GenericPlugin');
+import('classes.plugins.ViewableFilePlugin');
 
-class PdfJsViewerPlugin extends GenericPlugin {
+class PdfJsViewerPlugin extends ViewableFilePlugin {
 	/**
-	 * Register the plugin.
-	 * @param $category string Plugin category
-	 * @param $path string Plugin path
-	 * @return boolean true for success
+	 * Install default settings on journal creation.
+	 * @return string
 	 */
-	function register($category, $path) {
-		if (parent::register($category, $path)) {
-			if ($this->getEnabled()) {
-				HookRegistry::register('TemplateManager::include', array(&$this, '_includeCallback'));
-				HookRegistry::register('TemplateManager::display', array(&$this, '_displayCallback'));
-			}
-
-			return true;
-		}
-		return false;
+	function getContextSpecificPluginSettingsFile() {
+		return $this->getPluginPath() . '/settings.xml';
 	}
 
 	/**
@@ -48,49 +38,44 @@ class PdfJsViewerPlugin extends GenericPlugin {
 	}
 
 	/**
-	 * Hook callback function for TemplateManager::include
-	 * @param $hookName string Hook name
-	 * @param $args array Hook arguments
+	 * Determine whether this plugin can handle the specified content.
+	 * @param $galley ArticleGalley|IssueGalley
+	 * @return boolean True iff the plugin can handle the content
 	 */
-	function _includeCallback($hookName, $args) {
-		if ($this->getEnabled()) {
-			$templateMgr =& $args[0];
-			$params =& $args[1];
-
-			if (!isset($params['smarty_include_tpl_file'])) return false;
-
-			switch ($params['smarty_include_tpl_file']) {
-				case 'article/pdfViewer.tpl':
-					$templatePath = $this->getTemplatePath();
-					$templateMgr->assign('pluginTemplatePath', $templatePath);
-					$templateMgr->assign('pluginUrl', Request::getBaseUrl() . DIRECTORY_SEPARATOR . $this->getPluginPath());
-					$params['smarty_include_tpl_file'] = $templatePath . 'articleGalley.tpl';
-					break;
-			}
-			return false;
+	function canHandle($galley) {
+		if (is_a($galley, 'ArticleGalley') && $galley->getGalleyType() == $this->getName()) {
+			return true;
+		} elseif (is_a($galley, 'IssueGalley') && $galley->getFileType() == 'application/pdf') {
+			return true;
 		}
+		return false;
 	}
 
 	/**
-	 * Hook callback function for TemplateManager::display
-	 * @param $hookName string Hook name
-	 * @param $args array Hook arguments
+	 * @copydoc ViewableFilePlugin::displayArticleGalley
 	 */
-	function _displayCallback($hookName, $args) {
-		if ($this->getEnabled()) {
-			$templateMgr =& $args[0];
-			$template =& $args[1];
+	function displayArticleGalley($request, $issue, $article, $galley) {
+		$templateMgr = TemplateManager::getManager($request);
+		$galleyFiles = $galley->getLatestGalleyFiles();
+		assert(count($galleyFiles)==1);
+		$templateMgr->assign(array(
+			'pluginTemplatePath' => $this->getTemplatePath(),
+			'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
+			'firstGalleyFile' => array_shift($galleyFiles),
+		));
+		return parent::displayArticleGalley($request, $issue, $article, $galley);
+	}
 
-			switch ($template) {
-				case 'issue/issueGalley.tpl':
-					$templatePath = $this->getTemplatePath();
-					$templateMgr->assign('pluginTemplatePath', $templatePath);
-					$templateMgr->assign('pluginUrl', Request::getBaseUrl() . DIRECTORY_SEPARATOR . $this->getPluginPath());
-					$template = $templatePath . 'issueGalley.tpl';
-					break;
-			}
-			return false;
-		}
+	/**
+	 * @copydoc ViewableFilePlugin::displayArticleGalley
+	 */
+	function displayIssueGalley($request, $issue, $galley) {
+		$templateMgr = TemplateManager::getManager($request);
+		$templateMgr->assign(array(
+			'pluginTemplatePath' => $this->getTemplatePath(),
+			'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
+		));
+		return parent::displayIssueGalley($request, $issue, $galley);
 	}
 
 	/**
