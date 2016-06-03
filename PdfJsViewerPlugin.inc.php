@@ -84,15 +84,30 @@ class PdfJsViewerPlugin extends GenericPlugin {
 	}
 
 	/**
-	 * FIXME
+	 * Callback that renders the issue galley.
+	 * @param $hookName string
+	 * @param $args array
+	 * @return boolean
 	 */
-	function displayIssueGalley($request, $issue, $galley) {
+	function issueCallback($hookName, $args) {
+		$request =& $args[0];
+		$issue =& $args[1];
+		$galley =& $args[2];
+
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->assign(array(
-			'pluginTemplatePath' => $this->getTemplatePath(),
-			'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
-		));
-		return parent::displayIssueGalley($request, $issue, $galley);
+		if ($galley && $galley->getFileType() == 'application/pdf') {
+			$templateMgr->assign(array(
+				'pluginTemplatePath' => $this->getTemplatePath(),
+				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
+				'galleyFile' => $galley->getFile(),
+				'issue' => $issue,
+				'galley' => $galley,
+			));
+			$templateMgr->display($this->getTemplatePath() . '/issueGalley.tpl');
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
