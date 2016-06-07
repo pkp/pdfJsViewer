@@ -12,7 +12,7 @@
   -->
 <version>
 	<application>pdfJsViewer</application>
-	<type>plugins.viewableFiles</type>
+	<type>plugins.generic</type>
 	<release>1.0.0.0</release>
 	<date>2014-11-24</date>
 	<lazy-load>1</lazy-load>
