@@ -18,6 +18,7 @@
 	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
 
 	{load_stylesheet context="frontend" stylesheets=$stylesheets}
+	<script src="{$jQueryUrl}"></script>
 
 	{$additionalHeadData}
 </head>

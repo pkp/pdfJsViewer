@@ -75,6 +75,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'issue' => $issue,
 				'article' => $article,
 				'galley' => $galley,
+				'jQueryUrl' => $this->_getJQueryUrl($request),
 			));
 			$templateMgr->display($this->getTemplatePath() . '/articleGalley.tpl');
 			return true;
@@ -102,12 +103,27 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'galleyFile' => $galley->getFile(),
 				'issue' => $issue,
 				'galley' => $galley,
+				'jQueryUrl' => $this->_getJQueryUrl($request),
 			));
 			$templateMgr->display($this->getTemplatePath() . '/issueGalley.tpl');
 			return true;
 		}
 
 		return false;
+	}
+
+	/**
+	 * Get the URL for JQuery JS.
+	 * @param $request PKPRequest
+	 * @return string
+	 */
+	private function _getJQueryUrl($request) {
+		$min = Config::getVar('general', 'enable_minified') ? '.min' : '';
+		if (Config::getVar('general', 'enable_cdn')) {
+			return '//ajax.googleapis.com/ajax/libs/jquery/' . CDN_JQUERY_VERSION . '/jquery' . $min . '.js';
+		} else {
+			return $request->getBaseUrl() . '/lib/pkp/lib/vendor/components/jquery/jquery' . $min . '.js';
+		}
 	}
 
 	/**
