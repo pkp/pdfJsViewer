@@ -7,10 +7,6 @@
  *
  * Embedded viewing of a PDF galley.
  *}
-{capture assign=additionalHeadData}
-	{$additionalHeadData}
-	{include file="frontend/objects/articleFile_googleScholar.tpl" article=$article}
-{/capture}
 {url|assign:"pdfUrl" op="download" path=$article->getBestArticleId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal):$galleyFile->getId() escape=false}
 {url|assign:"parentUrl" page="article" op="view" path=$article->getBestArticleId($currentJournal)}
 {include file="$pluginTemplatePath/display.tpl" title=$article->getLocalizedTitle() parentUrl=$parentUrl pdfUrl=$pdfUrl}
