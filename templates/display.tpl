@@ -13,14 +13,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{translate key="article.pageTitle" title=$title}</title>
-	<meta name="generator" content="{$applicationName} {$currentVersionString|escape}" />
-	{$metaCustomHeaders}
-	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
 
+	{load_header context="frontend" headers=$headers}
 	{load_stylesheet context="frontend" stylesheets=$stylesheets}
-	<script src="{$jQueryUrl}"></script>
-
-	{$additionalHeadData}
+	{load_script context="frontend" scripts=$scripts}
 </head>
 <body class="pkp_page_{$requestedPage|escape} pkp_op_{$requestedOp|escape}">
 
@@ -81,8 +77,6 @@
 	<div id="pdfCanvasContainer">
 		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe>
 	</div>
-
 	{call_hook name="Templates::Common::Footer::PageFooter"}
-
 </body>
 </html>
