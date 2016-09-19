@@ -26,6 +26,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 			if ($this->getEnabled()) {
 				HookRegistry::register('ArticleHandler::view::galley', array($this, 'articleCallback'));
 				HookRegistry::register('IssueHandler::view::galley', array($this, 'issueCallback'));
+				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
 			}
 			return true;
 		}
@@ -68,6 +69,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 
 		$templateMgr = TemplateManager::getManager($request);
 		if ($galley && $galley->getFileType() == 'application/pdf') {
+			$application = Application::getApplication();
 			$templateMgr->assign(array(
 				'pluginTemplatePath' => $this->getTemplatePath(),
 				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -76,6 +78,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'article' => $article,
 				'galley' => $galley,
 				'jQueryUrl' => $this->_getJQueryUrl($request),
+				'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
 			));
 			$templateMgr->display($this->getTemplatePath() . '/articleGalley.tpl');
 			return true;
@@ -97,6 +100,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 
 		$templateMgr = TemplateManager::getManager($request);
 		if ($galley && $galley->getFileType() == 'application/pdf') {
+			$application = Application::getApplication();
 			$templateMgr->assign(array(
 				'pluginTemplatePath' => $this->getTemplatePath(),
 				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -104,6 +108,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'issue' => $issue,
 				'galley' => $galley,
 				'jQueryUrl' => $this->_getJQueryUrl($request),
+				'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
 			));
 			$templateMgr->display($this->getTemplatePath() . '/issueGalley.tpl');
 			return true;
