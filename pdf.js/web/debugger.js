@@ -1,5 +1,3 @@
-/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
 /* Copyright 2012 Mozilla Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* globals PDFJS */
 
 'use strict';
 
@@ -67,7 +64,7 @@ var FontInspector = (function FontInspectorClosure() {
     name: 'Font Inspector',
     panel: null,
     manager: null,
-    init: function init() {
+    init: function init(pdfjsLib) {
       var panel = this.panel;
       panel.setAttribute('style', 'padding: 5px;');
       var tmp = document.createElement('button');
@@ -124,8 +121,8 @@ var FontInspector = (function FontInspectorClosure() {
         url = URL.createObjectURL(new Blob([fontObj.data], {
           type: fontObj.mimeType
         }));
+        download.href = url;
       }
-      download.href = url;
       download.textContent = 'Download';
       var logIt = document.createElement('a');
       logIt.href = '';
@@ -167,7 +164,7 @@ var StepperManager = (function StepperManagerClosure() {
   var stepperDiv = null;
   var stepperControls = null;
   var stepperChooser = null;
-  var breakPoints = {};
+  var breakPoints = Object.create(null);
   return {
     // Properties/functions needed by PDFBug.
     id: 'Stepper',
@@ -293,7 +290,7 @@ var Stepper = (function StepperClosure() {
     this.operatorListIdx = 0;
   }
   Stepper.prototype = {
-    init: function init() {
+    init: function init(pdfjsLib) {
       var panel = this.panel;
       var content = c('div', 'c=continue, s=step');
       var table = c('table');
@@ -309,8 +306,8 @@ var Stepper = (function StepperClosure() {
       this.table = table;
       if (!opMap) {
         opMap = Object.create(null);
-        for (var key in PDFJS.OPS) {
-          opMap[PDFJS.OPS[key]] = key;
+        for (var key in pdfjsLib.OPS) {
+          opMap[pdfjsLib.OPS[key]] = key;
         }
       }
     },
@@ -460,9 +457,9 @@ var Stats = (function Stats() {
     name: 'Stats',
     panel: null,
     manager: null,
-    init: function init() {
+    init: function init(pdfjsLib) {
       this.panel.setAttribute('style', 'padding: 5px;');
-      PDFJS.enableStats = true;
+      pdfjsLib.PDFJS.enableStats = true;
     },
     enabled: false,
     active: false,
@@ -534,7 +531,7 @@ var PDFBug = (function PDFBugClosure() {
         });
       }
     },
-    init: function init() {
+    init: function init(pdfjsLib, container) {
       /*
        * Basic Layout:
        * PDFBug
@@ -555,7 +552,6 @@ var PDFBug = (function PDFBugClosure() {
       panels.setAttribute('class', 'panels');
       ui.appendChild(panels);
 
-      var container = document.getElementById('viewerContainer');
       container.appendChild(ui);
       container.style.right = panelWidth + 'px';
 
@@ -578,7 +574,7 @@ var PDFBug = (function PDFBugClosure() {
         tool.panel = panel;
         tool.manager = this;
         if (tool.enabled) {
-          tool.init();
+          tool.init(pdfjsLib);
         } else {
           panel.textContent = tool.name + ' is disabled. To enable add ' +
                               ' "' + tool.id + '" to the pdfBug parameter ' +
