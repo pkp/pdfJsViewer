@@ -1,8 +1,8 @@
 {**
- * plugins/viewableFiles/pdfJsViewer/display.tpl
+ * plugins/generic/pdfJsViewer/display.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Embedded viewing of a PDF galley.
@@ -13,18 +13,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{translate key="article.pageTitle" title=$title}</title>
-	<meta name="description" content="{$metaSearchDescription|escape}" />
-	<meta name="keywords" content="{$metaSearchKeywords|escape}" />
-	<meta name="generator" content="{$applicationName} {$currentVersionString|escape}" />
-	{$metaCustomHeaders}
-	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
 
+	{load_header context="frontend" headers=$headers}
 	{load_stylesheet context="frontend" stylesheets=$stylesheets}
+	{load_script context="frontend" scripts=$scripts}
 </head>
 <body class="pkp_page_{$requestedPage|escape} pkp_op_{$requestedOp|escape}">
 
 	{* Header wrapper *}
-	<header class="header_view_pdf">
+	<header class="header_view">
 
 		<a href="{$parentUrl}" class="return">
 			<span class="pkp_screen_reader">
@@ -78,10 +75,8 @@
 	<script type="text/javascript" src="{$pluginUrl}/pdf.js/web/viewer.js"></script>
 
 	<div id="pdfCanvasContainer">
-		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe> 
+		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe>
 	</div>
-
 	{call_hook name="Templates::Common::Footer::PageFooter"}
-
 </body>
 </html>
