@@ -1,5 +1,5 @@
 {**
- * plugins/generic/pdfJsViewer/issueGalley.tpl
+ * plugins/generic/pdfJsViewer/templates/issueGalley.tpl
  *
  * Copyright (c) 2014-2017 Simon Fraser University
  * Copyright (c) 2003-2017 John Willinsky
