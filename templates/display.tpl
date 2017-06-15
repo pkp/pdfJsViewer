@@ -74,7 +74,7 @@
 	</script>
 	<script type="text/javascript" src="{$pluginUrl}/pdf.js/web/viewer.js"></script>
 
-	<div id="pdfCanvasContainer">
+	<div id="pdfCanvasContainer" class="galley_view">
 		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe>
 	</div>
 	{call_hook name="Templates::Common::Footer::PageFooter"}
