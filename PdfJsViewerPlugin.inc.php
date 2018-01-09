@@ -27,6 +27,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				HookRegistry::register('ArticleHandler::view::galley', array($this, 'articleCallback'));
 				HookRegistry::register('IssueHandler::view::galley', array($this, 'issueCallback'));
 				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
+				$this->_registerTemplateResource();
 			}
 			return true;
 		}
@@ -135,7 +136,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 	 * @copydoc PKPPlugin::getTemplatePath
 	 */
 	function getTemplatePath($inCore = false) {
-		return parent::getTemplatePath($inCore) . 'templates/';
+		return $this->getTemplateResourceName() . ':templates/';
 	}
 }
 
