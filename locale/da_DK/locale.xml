@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/generic/pdfJsViewer/locale/da_DK/locale.xml
+  *
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="da_DK" full_name="Dansk">
+	<message key="plugins.generic.pdfJsViewer.name">PDF.JS PDF Viewer</message>
+	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Denne plugin bruger <a href="http://mozilla.github.io/pdf.js"> PDF.js PDF-viewer </a> til at indlejre PDF-filer visningssiden.]]></message>
+</locale>
