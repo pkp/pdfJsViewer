@@ -24,7 +24,6 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				HookRegistry::register('ArticleHandler::view::galley', array($this, 'articleCallback'));
 				HookRegistry::register('IssueHandler::view::galley', array($this, 'issueCallback'));
 				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
-				$this->_registerTemplateResource();
 			}
 			return true;
 		}
@@ -127,13 +126,6 @@ class PdfJsViewerPlugin extends GenericPlugin {
 		} else {
 			return $request->getBaseUrl() . '/lib/pkp/lib/components/jquery/jquery' . $min . '.js';
 		}
-	}
-
-	/**
-	 * @copydoc PKPPlugin::getTemplatePath
-	 */
-	function getTemplatePath($inCore = false) {
-		return $this->getTemplateResourceName() . ':templates/';
 	}
 }
 
