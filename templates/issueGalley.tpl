@@ -9,4 +9,4 @@
  *}
 {capture assign="pdfUrl"}{url op="download" path=$issue->getBestIssueId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal) escape=false}{/capture}
 {capture assign="parentUrl"}{url page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}{/capture}
-{include file="$pluginTemplatePath/display.tpl" title=$issue->getIssueIdentification() parentUrl=$parentUrl pdfUrl=$pdfUrl}
+{include file=$displayTemplateResource title=$issue->getIssueIdentification() parentUrl=$parentUrl pdfUrl=$pdfUrl}
