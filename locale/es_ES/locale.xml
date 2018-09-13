@@ -12,6 +12,6 @@
   -->
 
 <locale name="es_ES" full_name="Español (España)">
-	<message key="plugins.generic.pdfJsViewer.name">Plugin visor de PDFs  PDF.JS</message>
-	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Este plugin usa el visor de PDFs <a href="http://mozilla.github.io/pdf.js"> pdf.js </a> para visualizar PDFs embebidos en las páginas de galerada de números y artículos.]]></message>
+	<message key="plugins.generic.pdfJsViewer.name">Módulo visor de PDFs  PDF.JS</message>
+	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Este módulo usa el visor de PDFs <a href="http://mozilla.github.io/pdf.js"> pdf.js </a> para visualizar PDFs embebidos en las páginas de galerada de números y artículos.]]></message>
 </locale>
