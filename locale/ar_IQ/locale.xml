@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/generic/pdfJsViewer/locale/ar_IQ/locale.xml
+  *
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="ar_IQ" full_name="العربية">
+	<message key="plugins.generic.pdfJsViewer.name">إضافة المعاينة المضمنة لملفات PDF</message>
+	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[هذه الإضافة تستعمل <a href="http://mozilla.github.io/pdf.js">المعاين pdf.js PDF</a> لتضمين ملفات PDF في صفحات معاينة الألواح الطباعية للمقالات والأعداد.]]></message>
+</locale>
