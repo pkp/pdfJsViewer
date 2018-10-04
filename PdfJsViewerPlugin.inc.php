@@ -21,8 +21,8 @@ class PdfJsViewerPlugin extends GenericPlugin {
 	function register($category, $path, $mainContextId = null) {
 		if (parent::register($category, $path, $mainContextId)) {
 			if ($this->getEnabled($mainContextId)) {
-				HookRegistry::register('ArticleHandler::view::galley', array($this, 'articleCallback'));
-				HookRegistry::register('IssueHandler::view::galley', array($this, 'issueCallback'));
+				HookRegistry::register('ArticleHandler::view::galley', array($this, 'articleCallback'), HOOK_SEQUENCE_LAST);
+				HookRegistry::register('IssueHandler::view::galley', array($this, 'issueCallback'), HOOK_SEQUENCE_LAST);
 				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
 			}
 			return true;
