@@ -67,6 +67,13 @@ class PdfJsViewerPlugin extends GenericPlugin {
 		$templateMgr = TemplateManager::getManager($request);
 		if ($galley && $galley->getFileType() == 'application/pdf') {
 			$application = Application::getApplication();
+
+			$journal = $request->getJournal();
+      $pdfUrl = $journal->getPath() . '/article/download/' . $article->getBestArticleId() . '/' . $galley->getBestGalleyId();
+      if (Config::getVar('general', 'restful_urls') != 'Off') {
+        $pdfUrl = '/index.php/' . $pdfUrl;
+      }	
+
 			$templateMgr->assign(array(
 				'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
 				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -76,6 +83,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'galley' => $galley,
 				'jQueryUrl' => $this->_getJQueryUrl($request),
 				'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
+				'pdfUrl' => $pdfUrl
 			));
 			$templateMgr->display($this->getTemplateResource('articleGalley.tpl'));
 			return true;
