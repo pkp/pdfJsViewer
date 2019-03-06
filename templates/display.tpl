@@ -12,7 +12,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{translate key="article.pageTitle" title=$title}</title>
+	<title>{translate key="article.pageTitle" title=$title|escape}</title>
 
 	{load_header context="frontend" headers=$headers}
 	{load_stylesheet context="frontend" stylesheets=$stylesheets}
@@ -34,7 +34,7 @@
 		</a>
 
 		<a href="{$parentUrl}" class="title">
-			{$title}
+			{$title|escape}
 		</a>
 
 		<a href="{$pdfUrl}" class="download" download>
