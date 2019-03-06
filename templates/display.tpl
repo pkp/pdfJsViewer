@@ -34,7 +34,7 @@
 		</a>
 
 		<a href="{$parentUrl}" class="title">
-			{$title}
+			{$title|escape}
 		</a>
 
 		<a href="{$pdfUrl}" class="download" download>
