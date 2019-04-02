@@ -48,6 +48,15 @@
 
 	</header>
 
+	<script type="text/javascript">
+            // Creating iframe's src in JS instead of Smarty so that EZProxy-using sites can find our domain in $pdfUrl and do their rewrites on it.
+            $(document).ready(function() {ldelim}
+                var urlBase = "{$pluginUrl}/pdf.js/web/viewer.html?file=";
+                var pdfUrl = {$pdfUrl|json_encode|default:''};
+                $("#pdfCanvasContainer > iframe").attr("src", urlBase + encodeURIComponent(pdfUrl));
+            {rdelim});
+        </script>
+
 	<div id="pdfCanvasContainer" class="galley_view{if !$isLatestPublication} galley_view_with_notice{/if}">
 		{if !$isLatestPublication}
 			<div class="galley_view_notice">
@@ -56,7 +65,7 @@
 				</div>
 			</div>
 		{/if}
-		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" title="{$galleyTitle}" allowfullscreen webkitallowfullscreen></iframe>
+		<iframe src="" width="100%" height="100%" style="min-height: 500px;" title="{$galleyTitle}" allowfullscreen webkitallowfullscreen></iframe>
 	</div>
 	{call_hook name="Templates::Common::Footer::PageFooter"}
 </body>
