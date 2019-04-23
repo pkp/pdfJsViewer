@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/generic/pdfJsViewer/locale/el_GR/locale.xml
+  *
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="el_GR" full_name="ελληνικά">
+	<message key="plugins.generic.pdfJsViewer.name">PDF.JS PDF Viewer</message>
+	<message key="plugins.generic.pdfJsViewer.description"><![CDATA[Αυτό το Πρόσθετο χρησιμοποιεί το <a href="http://mozilla.github.io/pdf.js">pdf.js PDF viewer</a> για να ενσωματώσει PDF στις σελίδες προβολής των άρθρων και των τυπογραφικών δοκιμίων.]]></message>
+</locale>
