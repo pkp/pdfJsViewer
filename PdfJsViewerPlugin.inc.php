@@ -73,6 +73,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'galleyFile' => $galley->getFile(),
 				'issue' => $issue,
 				'article' => $article,
+				'bestId' => method_exists($article, 'getBestId') ? $article->getBestId() : $article->getBestArticleId(),
 				'galley' => $galley,
 				'jQueryUrl' => $this->_getJQueryUrl($request),
 				'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
