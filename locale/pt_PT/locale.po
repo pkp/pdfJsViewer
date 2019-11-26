@@ -1,0 +1,18 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-19T11:05:19+00:00\n"
+"PO-Revision-Date: 2019-11-19T11:05:19+00:00\n"
+"Language: \n"
+
+msgid "plugins.generic.pdfJsViewer.name"
+msgstr "Visualizador de PDF.JS"
+
+msgid "plugins.generic.pdfJsViewer.description"
+msgstr "Este plugin usa o <a href=\"http://mozilla.github.io/pdf.js\">Visualizador de PDF, pdf.js</a>, para embeber o PDF do artigo nas páginas de visualização de um número."

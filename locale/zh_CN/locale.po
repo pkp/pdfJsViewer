@@ -1,0 +1,18 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-19T11:05:20+00:00\n"
+"PO-Revision-Date: 2019-11-19T11:05:20+00:00\n"
+"Language: \n"
+
+msgid "plugins.generic.pdfJsViewer.name"
+msgstr "PDF.JS 查看器插件"
+
+msgid "plugins.generic.pdfJsViewer.description"
+msgstr "该款插件使用 <a href=\"http://mozilla.github.io/pdf.js\">pdf.js PDF 查看器</a> 在文章和期次样稿上插入PDFs。"
