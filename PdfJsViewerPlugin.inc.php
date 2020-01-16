@@ -66,7 +66,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 
 		$templateMgr = TemplateManager::getManager($request);
 		if ($galley && $galley->getFileType() == 'application/pdf') {
-			$application = Application::getApplication();
+			$application = Application::get();
 			$templateMgr->assign(array(
 				'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
 				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -98,7 +98,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 
 		$templateMgr = TemplateManager::getManager($request);
 		if ($galley && $galley->getFileType() == 'application/pdf') {
-			$application = Application::getApplication();
+			$application = Application::get();
 			$templateMgr->assign(array(
 				'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
 				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
