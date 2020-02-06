@@ -1,5 +1,5 @@
 {**
- * plugins/generic/pdfJsViewer/templates/articleGalley.tpl
+ * plugins/generic/pdfJsViewer/templates/submissionGalley.tpl
  *
  * Copyright (c) 2014-2019 Simon Fraser University
  * Copyright (c) 2003-2019 John Willinsky
@@ -8,5 +8,5 @@
  * Embedded viewing of a PDF galley.
  *}
 {capture assign="pdfUrl"}{url op="download" path=$bestId|to_array:$galley->getBestGalleyId($currentJournal):$galleyFile->getId() escape=false}{/capture}
-{capture assign="parentUrl"}{url page="article" op="view" path=$bestId}{/capture}
-{include file=$displayTemplateResource title=$article->getLocalizedTitle() parentUrl=$parentUrl pdfUrl=$pdfUrl}
+{capture assign="parentUrl"}{url page=$submissionNoun op="view" path=$bestId}{/capture}
+{include file=$displayTemplateResource title=$submission->getLocalizedTitle() parentUrl=$parentUrl pdfUrl=$pdfUrl}
