@@ -71,7 +71,6 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				$submission =& $args[3];
 				$submissionNoun = 'article';
 				break;
-			case 'pps': // DEPRECATED; use ops
 			case 'ops':
 				$galley =& $args[1];
 				$submission =& $args[2];
