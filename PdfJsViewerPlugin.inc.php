@@ -81,6 +81,12 @@ class PdfJsViewerPlugin extends GenericPlugin {
 		}
 
 		if ($galley && $galley->getFileType() == 'application/pdf') {
+			foreach ($submission->getData('publications') as $publication) {
+				if ($publication->getId() === $galley->getData('publicationId')) {
+					$galleyPublication = $publication;
+					break;
+				}
+			}
 			$templateMgr = TemplateManager::getManager($request);
 			$templateMgr->assign(array(
 				'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
@@ -93,6 +99,8 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'galley' => $galley,
 				'jQueryUrl' => $this->_getJQueryUrl($request),
 				'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
+				'isLatestPublication' => $submission->getData('currentPublicationId') === $galley->getData('publicationId'),
+				'galleyPublication' => $galleyPublication,
 			));
 			$templateMgr->display($this->getTemplateResource('submissionGalley.tpl'));
 			return true;
@@ -123,6 +131,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 				'galley' => $galley,
 				'jQueryUrl' => $this->_getJQueryUrl($request),
 				'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
+				'isLatestPublication' => true,
 			));
 			$templateMgr->display($this->getTemplateResource('issueGalley.tpl'));
 			return true;
