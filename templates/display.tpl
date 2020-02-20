@@ -48,7 +48,14 @@
 
 	</header>
 
-	<div id="pdfCanvasContainer" class="galley_view">
+	<div id="pdfCanvasContainer" class="galley_view{if !$isLatestPublication} galley_view_with_notice{/if}">
+		{if !$isLatestPublication}
+			<div class="galley_view_notice">
+				<div class="galley_view_notice_message" role="alert">
+					{translate key="submission.outdatedVersion" datePublished=$galleyPublication->getData('datePublished')|date_format:$dateFormatLong urlRecentVersion=$parentUrl}
+				</div>
+			</div>
+		{/if}
 		<iframe src="{$pluginUrl}/pdf.js/web/viewer.html?file={$pdfUrl|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe>
 	</div>
 	{call_hook name="Templates::Common::Footer::PageFooter"}
