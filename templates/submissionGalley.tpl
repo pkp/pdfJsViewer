@@ -7,6 +7,12 @@
  *
  * Embedded viewing of a PDF galley.
  *}
-{capture assign="pdfUrl"}{url op="download" path=$bestId|to_array:$galley->getBestGalleyId($currentJournal):$galleyFile->getId() escape=false}{/capture}
+{capture assign="pdfUrl"}
+	{if $isLatestPublication}
+		{url op="download" path=$bestId|to_array:$galley->getBestGalleyId($currentJournal):$galleyFile->getId() escape=false}
+	{else}
+		{url op="download" path=$bestId|to_array:'version':$galleyPublication->getId():$galley->getBestGalleyId($currentJournal):$galleyFile->getId() escape=false}
+	{/if}
+{/capture}
 {capture assign="parentUrl"}{url page=$submissionNoun op="view" path=$bestId}{/capture}
 {include file=$displayTemplateResource title=$submission->getLocalizedTitle() parentUrl=$parentUrl pdfUrl=$pdfUrl}
