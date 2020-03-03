@@ -81,6 +81,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 		}
 
 		if ($galley && $galley->getFileType() == 'application/pdf') {
+			$galleyPublication = null;
 			foreach ($submission->getData('publications') as $publication) {
 				if ($publication->getId() === $galley->getData('publicationId')) {
 					$galleyPublication = $publication;
