@@ -9,4 +9,5 @@
  *}
 {capture assign="pdfUrl"}{url op="download" path=$issue->getBestIssueId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal) escape=false}{/capture}
 {capture assign="parentUrl"}{url page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}{/capture}
-{include file=$displayTemplateResource title=$issue->getIssueIdentification() parentUrl=$parentUrl pdfUrl=$pdfUrl}
+{capture assign="galleyTitle"}{translate key="submission.representationOfTitle" representation=$galley->getLabel() title=$publication->getLocalizedFullTitle()|escape}{/capture}
+{include file=$displayTemplateResource title=$issue->getIssueIdentification() parentUrl=$parentUrl pdfUrl=$pdfUrl galleyTitle=$galleyTitle}
