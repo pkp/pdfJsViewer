@@ -80,7 +80,13 @@ class PdfJsViewerPlugin extends GenericPlugin {
 			default: throw new Exception('Unknown application!');
 		}
 
-		if ($galley && $galley->getFileType() == 'application/pdf') {
+		if (!$galley) {
+			return false;
+		}
+
+		$submissionFile = $galley->getFile();
+		$filepath = Services::get('file')->getPath($submissionFile->getData('fileId'));
+		if (Services::get('file')->fs->getMimetype($filepath) === 'application/pdf') {
 			$galleyPublication = null;
 			foreach ($submission->getData('publications') as $publication) {
 				if ($publication->getId() === $galley->getData('publicationId')) {
@@ -92,7 +98,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 			$templateMgr->assign(array(
 				'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
 				'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
-				'galleyFile' => $galley->getFile(),
+				'galleyFile' => $submissionFile,
 				'issue' => $issue,
 				'submission' => $submission,
 				'submissionNoun' => $submissionNoun,
