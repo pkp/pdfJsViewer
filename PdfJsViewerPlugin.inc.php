@@ -85,8 +85,7 @@ class PdfJsViewerPlugin extends GenericPlugin {
 		}
 
 		$submissionFile = $galley->getFile();
-		$filepath = Services::get('file')->getPath($submissionFile->getData('fileId'));
-		if (Services::get('file')->fs->getMimetype($filepath) === 'application/pdf') {
+		if ($submissionFile->getData('mimetype') === 'application/pdf') {
 			$galleyPublication = null;
 			foreach ($submission->getData('publications') as $publication) {
 				if ($publication->getId() === $galley->getData('publicationId')) {
