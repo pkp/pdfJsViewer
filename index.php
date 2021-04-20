@@ -18,4 +18,3 @@
 
 require_once('PdfJsViewerPlugin.inc.php');
 return new PdfJsViewerPlugin();
-
