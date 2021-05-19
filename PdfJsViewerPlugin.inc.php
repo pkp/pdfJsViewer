@@ -12,9 +12,11 @@
  * @brief This plugin enables embedding of the pdf.js viewer for PDF display
  */
 
-import('lib.pkp.classes.plugins.GenericPlugin');
+use PKP\plugins\HookRegistry;
 
-class PdfJsViewerPlugin extends GenericPlugin
+use APP\i18n\AppLocale;
+
+class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
 {
     /**
      * @copydoc Plugin::register()
