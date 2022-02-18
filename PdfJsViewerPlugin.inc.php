@@ -12,9 +12,9 @@
  * @brief This plugin enables embedding of the pdf.js viewer for PDF display
  */
 
+use APP\core\Application;
+use APP\template\TemplateManager;
 use PKP\plugins\HookRegistry;
-
-use APP\i18n\AppLocale;
 
 class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
 {
@@ -32,7 +32,6 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 // For OJS
                 HookRegistry::register('ArticleHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
                 HookRegistry::register('IssueHandler::view::galley', [$this, 'issueCallback'], HOOK_SEQUENCE_LAST);
-                AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
             }
             return true;
         }
@@ -68,10 +67,10 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
     /**
      * Callback that renders the submission galley.
      *
-     * @param $hookName string
-     * @param $args array
+     * @param string $hookName
+     * @param array $args
      *
-     * @return boolean
+     * @return bool
      */
     public function submissionCallback($hookName, $args)
     {
@@ -130,10 +129,10 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
     /**
      * Callback that renders the issue galley.
      *
-     * @param $hookName string
-     * @param $args array
+     * @param string $hookName
+     * @param array $args
      *
-     * @return boolean
+     * @return bool
      */
     public function issueCallback($hookName, $args)
     {
