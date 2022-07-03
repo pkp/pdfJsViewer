@@ -2,7 +2,7 @@
 # Tigran Zargaryan <tigran@flib.sci.am>, 2022.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-07-02 03:52+0000\n"
+"PO-Revision-Date: 2022-07-04 05:31+0000\n"
 "Last-Translator: Tigran Zargaryan <tigran@flib.sci.am>\n"
 "Language-Team: Armenian <http://translate.pkp.sfu.ca/projects/plugins/"
 "pdfjs-viewer-plugin/hy_AM/>\n"
@@ -15,9 +15,9 @@ msgstr ""
 
 msgid "plugins.generic.pdfJsViewer.description"
 msgstr ""
-"Այս փլագինը օգտագործում է <a href=\"http://mozilla.github.io/pdf.js\">pdf.js "
-"PDF դիտակ</a>՝ հոդվածին PDF նիշքեր կպցնելու և թողարկելու շարվածքի դիտման "
-"էջերը:"
+"Այս փլագինը օգտագործում է <a href=\"https://mozilla.github.io/pdf.js/\">"
+"pdf.js PDF դիտակ</a>՝ հոդվածին PDF նիշքեր կպցնելու և թողարկելու շարվածքի "
+"դիտման էջերը:"
 
 msgid "plugins.generic.pdfJsViewer.name"
 msgstr "PDF.JS PDF դիտակ"
