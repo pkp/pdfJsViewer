@@ -14,7 +14,7 @@
 
 use APP\core\Application;
 use APP\template\TemplateManager;
-use PKP\plugins\HookRegistry;
+use PKP\plugins\Hook;
 
 class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
 {
@@ -28,10 +28,10 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
         if (parent::register($category, $path, $mainContextId)) {
             if ($this->getEnabled($mainContextId)) {
                 // For OPS
-                HookRegistry::register('PreprintHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('PreprintHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
                 // For OJS
-                HookRegistry::register('ArticleHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
-                HookRegistry::register('IssueHandler::view::galley', [$this, 'issueCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('ArticleHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('IssueHandler::view::galley', [$this, 'issueCallback'], HOOK_SEQUENCE_LAST);
             }
             return true;
         }
