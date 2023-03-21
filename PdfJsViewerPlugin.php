@@ -30,10 +30,10 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
         if (parent::register($category, $path, $mainContextId)) {
             if ($this->getEnabled($mainContextId)) {
                 // For OPS
-                Hook::add('PreprintHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('PreprintHandler::view::galley', [$this, 'submissionCallback'], Hook::SEQUENCE_LAST);
                 // For OJS
-                Hook::add('ArticleHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
-                Hook::add('IssueHandler::view::galley', [$this, 'issueCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('ArticleHandler::view::galley', [$this, 'submissionCallback'], Hook::SEQUENCE_LAST);
+                Hook::add('IssueHandler::view::galley', [$this, 'issueCallback'], Hook::SEQUENCE_LAST);
             }
             return true;
         }
