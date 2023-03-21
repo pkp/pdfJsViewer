@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file plugins/generic/pdfJsViewer/PdfJsViewerPlugin.inc.php
+ * @file plugins/generic/pdfJsViewer/PdfJsViewerPlugin.php
  *
  * Copyright (c) 2013-2020 Simon Fraser University
  * Copyright (c) 2003-2020 John Willinsky
@@ -11,6 +11,8 @@
  *
  * @brief This plugin enables embedding of the pdf.js viewer for PDF display
  */
+
+namespace APP\plugins\generic\pdfJsViewer;
 
 use APP\core\Application;
 use APP\template\TemplateManager;
