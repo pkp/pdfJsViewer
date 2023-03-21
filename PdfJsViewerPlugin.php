@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file plugins/generic/pdfJsViewer/PdfJsViewerPlugin.inc.php
+ * @file plugins/generic/pdfJsViewer/PdfJsViewerPlugin.php
  *
  * Copyright (c) 2013-2020 Simon Fraser University
  * Copyright (c) 2003-2020 John Willinsky
@@ -11,6 +11,8 @@
  *
  * @brief This plugin enables embedding of the pdf.js viewer for PDF display
  */
+
+namespace APP\plugins\generic\pdfJsViewer;
 
 use APP\core\Application;
 use APP\template\TemplateManager;
@@ -28,10 +30,10 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
         if (parent::register($category, $path, $mainContextId)) {
             if ($this->getEnabled($mainContextId)) {
                 // For OPS
-                Hook::add('PreprintHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('PreprintHandler::view::galley', [$this, 'submissionCallback'], Hook::SEQUENCE_LAST);
                 // For OJS
-                Hook::add('ArticleHandler::view::galley', [$this, 'submissionCallback'], HOOK_SEQUENCE_LAST);
-                Hook::add('IssueHandler::view::galley', [$this, 'issueCallback'], HOOK_SEQUENCE_LAST);
+                Hook::add('ArticleHandler::view::galley', [$this, 'submissionCallback'], Hook::SEQUENCE_LAST);
+                Hook::add('IssueHandler::view::galley', [$this, 'issueCallback'], Hook::SEQUENCE_LAST);
             }
             return true;
         }
