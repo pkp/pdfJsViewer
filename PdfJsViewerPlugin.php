@@ -16,6 +16,7 @@ namespace APP\plugins\generic\pdfJsViewer;
 
 use APP\core\Application;
 use APP\template\TemplateManager;
+use Exception;
 use PKP\plugins\Hook;
 
 class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
