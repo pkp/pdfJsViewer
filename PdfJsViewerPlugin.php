@@ -116,7 +116,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'issue' => $issue,
                 'submission' => $submission,
                 'submissionNoun' => $submissionNoun,
-                'bestId' => $submission->getBestId(),
+                'bestId' => $galleyPublication->getData('urlPath') ?? $submission->getId(),
                 'galley' => $galley,
                 'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
                 'isLatestPublication' => $submission->getData('currentPublicationId') === $galley->getData('publicationId'),
