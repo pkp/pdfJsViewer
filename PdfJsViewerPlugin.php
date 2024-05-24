@@ -95,12 +95,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
             default: throw new Exception('Unknown application!');
         }
 
-        if (!$galley) {
-            return false;
-        }
-
-        $submissionFile = $galley->getFile();
-        if ($submissionFile?->getData('mimetype') === 'application/pdf') {
+        if ($galley && $galley->getFileType() === 'application/pdf') {
             $galleyPublication = null;
             foreach ($submission->getData('publications') as $publication) {
                 if ($publication->getId() === $galley->getData('publicationId')) {
@@ -112,7 +107,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
             $templateMgr->assign([
                 'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
                 'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
-                'galleyFile' => $submissionFile,
+                'galleyFile' => $galley->getFile(),
                 'issue' => $issue,
                 'submission' => $submission,
                 'submissionNoun' => $submissionNoun,
