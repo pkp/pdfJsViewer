@@ -100,7 +100,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
         }
 
         $submissionFile = $galley->getFile();
-        if ($submissionFile->getData('mimetype') === 'application/pdf') {
+        if ($submissionFile?->getData('mimetype') === 'application/pdf') {
             $galleyPublication = null;
             foreach ($submission->getData('publications') as $publication) {
                 if ($publication->getId() === $galley->getData('publicationId')) {
