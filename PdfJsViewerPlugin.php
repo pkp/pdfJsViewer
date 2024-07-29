@@ -104,6 +104,10 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 }
             }
             $templateMgr = TemplateManager::getManager($request);
+
+            if ($galleyPublication) {
+                $title = $galleyPublication->getLocalizedTitle(null, 'html');
+            }
             $templateMgr->assign([
                 'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
                 'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -116,6 +120,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
                 'isLatestPublication' => $submission->getData('currentPublicationId') === $galley->getData('publicationId'),
                 'galleyPublication' => $galleyPublication,
+                'title' => $title,
             ]);
             $templateMgr->display($this->getTemplateResource('submissionGalley.tpl'));
             return true;

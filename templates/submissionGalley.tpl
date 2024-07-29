@@ -17,4 +17,4 @@
 {capture assign="parentUrl"}{url page=$submissionNoun op="view" path=$bestId}{/capture}
 {capture assign="galleyTitle"}{translate key="submission.representationOfTitle" representation=$galley->getLabel() title=$publication->getLocalizedFullTitle()|escape}{/capture}
 {capture assign="datePublished"}{translate key="submission.outdatedVersion" datePublished=$galleyPublication->getData('datePublished')|date_format:$dateFormatLong urlRecentVersion=$parentUrl}{/capture}
-{include file=$displayTemplateResource title=$submission->getLocalizedTitle() parentUrl=$parentUrl pdfUrl=$pdfUrl galleyTitle=$galleyTitle datePublished=$datePublished}
+{include file=$displayTemplateResource title=$title parentUrl=$parentUrl pdfUrl=$pdfUrl galleyTitle=$galleyTitle datePublished=$datePublished}
