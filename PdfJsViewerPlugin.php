@@ -121,6 +121,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'isLatestPublication' => $submission->getData('currentPublicationId') === $galley->getData('publicationId'),
                 'galleyPublication' => $galleyPublication,
                 'title' => $title,
+                'titleIsHtml' => true,
             ]);
             $templateMgr->display($this->getTemplateResource('submissionGalley.tpl'));
             return true;
@@ -154,6 +155,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'galley' => $galley,
                 'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
                 'isLatestPublication' => true,
+                'titleIsHtml' => false,
             ]);
             $templateMgr->display($this->getTemplateResource('issueGalley.tpl'));
             return true;
