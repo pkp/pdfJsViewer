@@ -12,7 +12,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{translate key="article.pageTitle" title=$title|strip_tags|escape}</title>
+	<title>
+	{if $isTitleHtml}
+		{translate key="article.pageTitle" title=$title|strip_tags|escape}
+	{else}
+		{translate key="article.pageTitle" title=$title|escape}
+	{/if}
+	</title>
 
 	{load_header context="frontend" headers=$headers}
 	{load_stylesheet context="frontend" stylesheets=$stylesheets}
@@ -34,8 +40,8 @@
 		</a>
 
 		<a href="{$parentUrl}" class="title">
-			{if $titleIsHtml}
-				{$title}
+			{if $isTitleHtml}
+				{$title|strip_unsafe_html}
 			{else}
 				{$title|escape}
 			{/if}
