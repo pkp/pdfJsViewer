@@ -108,6 +108,27 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
             if ($galleyPublication) {
                 $title = $galleyPublication->getLocalizedTitle(null, 'html');
             }
+
+            $pdfUrl = $request->url(
+                null,
+                'article',
+                'download',
+                [$submission->getBestId(), $galley->getBestGalleyId(), $galley->getFile()->getId()],
+                null
+            );
+
+            $parentUrl = $request->url(null, 'article', 'view', $submission->getBestId());
+
+            $galleyTitle = __('submission.representationOfTitle', [
+                'representation' => $galley->getLabel(),
+                'title' => $galleyPublication->getLocalizedFullTitle(),
+            ]);
+
+            $datePublished = __('submission.outdatedVersion', [
+                'datePublished' => $galleyPublication->getData('datePublished'),
+                'urlRecentVersion' => $parentUrl,
+            ]);
+
             $templateMgr->assign([
                 'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
                 'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -121,8 +142,14 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'isLatestPublication' => $submission->getData('currentPublicationId') === $galley->getData('publicationId'),
                 'galleyPublication' => $galleyPublication,
                 'title' => $title,
+                'pdfUrl' => $pdfUrl,
+                'parentUrl' => $parentUrl,
+                'galleyTitle' => $galleyTitle,
+                'datePublished' => $datePublished,
+                'isTitleHtml' => true,
             ]);
-            $templateMgr->display($this->getTemplateResource('submissionGalley.tpl'));
+
+            $templateMgr->display($this->getTemplateResource('display.tpl'));
             return true;
         }
 
@@ -143,9 +170,32 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
         $issue = & $args[1];
         $galley = & $args[2];
 
-        $templateMgr = TemplateManager::getManager($request);
-        if ($galley && $galley->getFileType() == 'application/pdf') {
+        if ($galley && $galley->getFileType() === 'application/pdf') {
+            $templateMgr = TemplateManager::getManager($request);
             $application = Application::get();
+
+            $pdfUrl = $request->url(
+                null,
+                'issue',
+                'download',
+                [$issue->getBestIssueId(), $galley->getBestGalleyId()],
+                null
+            );
+
+            $parentUrl = $request->url(null, 'issue', 'view', $issue->getBestIssueId());
+
+            $galleyTitle = __('submission.representationOfTitle', [
+                'representation' => $galley->getLabel(),
+                'title' => $issue->getIssueIdentification(),
+            ]);
+
+            $datePublished = __('submission.outdatedVersion', [
+                'datePublished' => $issue->getData('datePublished'),
+                'urlRecentVersion' => $parentUrl,
+            ]);
+
+            $title = $issue->getIssueIdentification();
+
             $templateMgr->assign([
                 'displayTemplateResource' => $this->getTemplateResource('display.tpl'),
                 'pluginUrl' => $request->getBaseUrl() . '/' . $this->getPluginPath(),
@@ -154,8 +204,15 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'galley' => $galley,
                 'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
                 'isLatestPublication' => true,
+                'pdfUrl' => $pdfUrl,
+                'parentUrl' => $parentUrl,
+                'galleyTitle' => $galleyTitle,
+                'datePublished' => $datePublished,
+                'title' => $title,
+                'isTitleHtml' => false,
             ]);
-            $templateMgr->display($this->getTemplateResource('issueGalley.tpl'));
+
+            $templateMgr->display($this->getTemplateResource('display.tpl'));
             return true;
         }
 

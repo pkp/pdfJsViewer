@@ -31,7 +31,7 @@
 
 		<a href="{$parentUrl}" class="return">
 			<span class="pkp_screen_reader">
-				{if $parent instanceOf Issue}
+				{if $issue}
 					{translate key="issue.return"}
 				{else}
 					{translate key="article.return"}
