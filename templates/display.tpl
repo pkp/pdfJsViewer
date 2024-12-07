@@ -14,7 +14,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{translate key="article.pageTitle" title=$title|escape}</title>
+	<title>
+	{if $isTitleHtml}
+		{translate key="article.pageTitle" title=$title|strip_tags|escape}
+	{else}
+		{translate key="article.pageTitle" title=$title|escape}
+	{/if}
+	</title>
 
 	{load_header context="frontend" headers=$headers}
 	{load_stylesheet context="frontend" stylesheets=$stylesheets}
@@ -27,7 +33,7 @@
 
 		<a href="{$parentUrl}" class="return">
 			<span class="pkp_screen_reader">
-				{if $parent instanceOf Issue}
+				{if $issue}
 					{translate key="issue.return"}
 				{else}
 					{translate key="article.return"}
@@ -36,7 +42,11 @@
 		</a>
 
 		<a href="{$parentUrl}" class="title">
-			{$title|escape}
+			{if $isTitleHtml}
+				{$title|strip_unsafe_html}
+			{else}
+				{$title|escape}
+			{/if}
 		</a>
 
 		<a href="{$pdfUrl}" class="download" download>
