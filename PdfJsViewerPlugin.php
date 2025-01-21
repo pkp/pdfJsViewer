@@ -77,18 +77,18 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
      */
     public function submissionCallback($hookName, $args)
     {
-        $request = & $args[0];
+        $request = &$args[0];
         $application = Application::get();
         switch ($application->getName()) {
             case 'ojs2':
-                $issue = & $args[1];
-                $galley = & $args[2];
-                $submission = & $args[3];
+                $issue = &$args[1];
+                $galley = &$args[2];
+                $submission = &$args[3];
                 $submissionNoun = 'article';
                 break;
             case 'ops':
-                $galley = & $args[1];
-                $submission = & $args[2];
+                $galley = &$args[1];
+                $submission = &$args[2];
                 $submissionNoun = 'preprint';
                 $issue = null;
                 break;
@@ -115,9 +115,9 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'download',
                 [$submission->getBestId(), $galley->getBestGalleyId(), $galley->getFile()->getId()]
             );
-    
+
             $parentUrl = $request->url(null, 'article', 'view', [$submission->getBestId()]);
-    
+
             $galleyTitle = __('submission.representationOfTitle', [
                 'representation' => $galley->getLabel(),
                 'title' => $galleyPublication->getLocalizedFullTitle(),
@@ -149,7 +149,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
             ]);
 
             $templateMgr->display($this->getTemplateResource('display.tpl'));
-            
+
             return true;
         }
 
@@ -166,9 +166,9 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
      */
     public function issueCallback($hookName, $args)
     {
-        $request = & $args[0];
-        $issue = & $args[1];
-        $galley = & $args[2];
+        $request = &$args[0];
+        $issue = &$args[1];
+        $galley = &$args[2];
 
         if ($galley && $galley->getFileType() === 'application/pdf') {
             $templateMgr = TemplateManager::getManager($request);
@@ -180,9 +180,9 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'download',
                 [$issue->getBestIssueId(), $galley->getBestGalleyId()]
             );
-    
+
             $parentUrl = $request->url(null, 'issue', 'view', [$issue->getBestIssueId()]);
-    
+
             $galleyTitle = __('submission.representationOfTitle', [
                 'representation' => $galley->getLabel(),
                 'title' => $issue->getIssueIdentification(),
