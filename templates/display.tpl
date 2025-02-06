@@ -13,7 +13,7 @@
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>
 	{if $isTitleHtml}
 		{translate key="article.pageTitle" title=$title|strip_tags|escape}
@@ -49,7 +49,7 @@
 			{/if}
 		</a>
 
-		<a href="{$pdfUrl}" class="download" download>
+		<a href="{$pdfUrl}" class="download" download="download">
 			<span class="label">
 				{translate key="common.download"}
 			</span>
@@ -77,7 +77,7 @@
 				</div>
 			</div>
 		{/if}
-		<iframe src="" width="100%" height="100%" style="min-height: 500px;" title="{$galleyTitle}" allowfullscreen webkitallowfullscreen></iframe>
+		<iframe src="" width="100%" height="100%" style="min-height: 500px;" title="{$galleyTitle}" allow="fullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
 	</div>
 	{call_hook name="Templates::Common::Footer::PageFooter"}
 </body>
