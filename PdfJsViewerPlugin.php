@@ -111,12 +111,12 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
 
             $pdfUrl = $request->url(
                 null,
-                'article',
+                $submissionNoun,
                 'download',
                 [$submission->getBestId(), $galley->getBestGalleyId(), $galley->getFile()->getId()]
             );
 
-            $parentUrl = $request->url(null, 'article', 'view', [$submission->getBestId()]);
+            $parentUrl = $request->url(null, $submissionNoun, 'view', [$submission->getBestId()]);
 
             $galleyTitle = __('submission.representationOfTitle', [
                 'representation' => $galley->getLabel(),
