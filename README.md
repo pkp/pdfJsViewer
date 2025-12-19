@@ -1,6 +1,7 @@
 # pdf.js Viewer Plugin
 
 A pdf.js-based PDF viewer for OJS 3.x
+
 Author: Alec Smecher <alec@smecher.bc.ca>
 
 ## About
