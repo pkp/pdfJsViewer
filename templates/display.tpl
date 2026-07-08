@@ -77,7 +77,7 @@
 				</div>
 			</div>
 		{/if}
-		<iframe src="" width="100%" height="100%" style="min-height: 500px;" title="{$galleyTitle}" allow="fullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+		<iframe src="" width="100%" height="100%" style="min-height: 500px;" title="{$galleyTitle|escape}" allow="fullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
 	</div>
 	{call_hook name="Templates::Common::Footer::PageFooter"}
 </body>
