@@ -71,36 +71,16 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Iipropati zoxwebhu…
 pdfjs-document-properties-file-name = Igama lefayile:
 pdfjs-document-properties-file-size = Isayizi yefayile:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB (iibhayiti{ $size_b })
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB (iibhayithi{ $size_b })
 pdfjs-document-properties-title = Umxholo:
 pdfjs-document-properties-author = Umbhali:
 pdfjs-document-properties-subject = Umbandela:
 pdfjs-document-properties-keywords = Amagama aphambili:
 pdfjs-document-properties-creation-date = Umhla wokwenziwa kwayo:
 pdfjs-document-properties-modification-date = Umhla wokulungiswa kwayo:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Umntu oyenzileyo:
 pdfjs-document-properties-producer = Umvelisi we-PDF:
 pdfjs-document-properties-version = Uhlelo lwe-PDF:
 pdfjs-document-properties-page-count = Inani lamaphepha:
-
-## Variables:
-##   $width (Number) - the width of the (current) page
-##   $height (Number) - the height of the (current) page
-##   $unit (String) - the unit of measurement of the (current) page
-##   $name (String) - the name of the (current) page
-##   $orientation (String) - the orientation of the (current) page
-
 
 ##
 
@@ -118,18 +98,6 @@ pdfjs-printing-not-ready = Isilumkiso: IPDF ayihlohlwanga ngokupheleleyo ukwenze
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Togola ngebha eseCaleni
-pdfjs-toggle-sidebar-button-label = Togola ngebha eseCaleni
-pdfjs-document-outline-button =
-    .title = Bonisa uLwandlalo loXwebhu (cofa kabini ukuze wandise/diliza zonke izinto)
-pdfjs-document-outline-button-label = Isishwankathelo soxwebhu
-pdfjs-attachments-button =
-    .title = Bonisa iziqhotyoshelwa
-pdfjs-attachments-button-label = Iziqhoboshelo
-pdfjs-thumbs-button =
-    .title = Bonisa ukrobiso kumfanekiso
-pdfjs-thumbs-button-label = Ukrobiso kumfanekiso
 pdfjs-findbar-button =
     .title = Fumana kuXwebhu
 pdfjs-findbar-button-label = Fumana
@@ -138,18 +106,14 @@ pdfjs-findbar-button-label = Fumana
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Iphepha { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Ukrobiso kumfanekiso wephepha { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Fumana
     .placeholder = Fumana kuXwebhu…
+    .title = Fumana
 pdfjs-find-previous-button =
     .title = Fumanisa isenzeko sangaphambili sebinzana lamagama
 pdfjs-find-previous-button-label = Okwangaphambili
@@ -171,9 +135,6 @@ pdfjs-page-scale-actual = Ubungakanani bokwenene
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -200,13 +161,3 @@ pdfjs-password-invalid = Ipasiwedi ayisebenzi. Nceda uzame kwakhona.
 pdfjs-password-ok-button = KULUNGILE
 pdfjs-password-cancel-button = Rhoxisa
 pdfjs-web-fonts-disabled = Iifonti zewebhu ziqhwalelisiwe: ayikwazi ukusebenzisa iifonti ze-PDF ezincanyathelisiweyo.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

@@ -89,24 +89,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Keeroraaɗi Winndannde…
 pdfjs-document-properties-file-name = Innde fiilde:
 pdfjs-document-properties-file-size = Ɓetol fiilde:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } bite)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } bite)
 pdfjs-document-properties-title = Tiitoonde:
 pdfjs-document-properties-author = Binnduɗo:
 pdfjs-document-properties-subject = Toɓɓere:
 pdfjs-document-properties-keywords = Kelmekele jiytirɗe:
 pdfjs-document-properties-creation-date = Ñalnde Sosaa:
 pdfjs-document-properties-modification-date = Ñalnde Waylaa:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Cosɗo:
 pdfjs-document-properties-producer = Paggiiɗo PDF:
 pdfjs-document-properties-version = Yamre PDF:
@@ -152,18 +140,6 @@ pdfjs-printing-not-ready = Reentino: PDF oo loowaaki haa timmi ngam winnditagol.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Toggilo Palal Sawndo
-pdfjs-toggle-sidebar-button-label = Toggilo Palal Sawndo
-pdfjs-document-outline-button =
-    .title = Hollu Ƴiyal Fiilannde (dobdobo ngam wertude/taggude teme fof)
-pdfjs-document-outline-button-label = Toɓɓe Fiilannde
-pdfjs-attachments-button =
-    .title = Hollu Ɗisanɗe
-pdfjs-attachments-button-label = Ɗisanɗe
-pdfjs-thumbs-button =
-    .title = Hollu Dooɓe
-pdfjs-thumbs-button-label = Dooɓe
 pdfjs-findbar-button =
     .title = Yiylo e fiilannde
 pdfjs-findbar-button-label = Yiytu
@@ -172,18 +148,14 @@ pdfjs-findbar-button-label = Yiytu
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Hello { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Dooɓre Hello { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Yiytu
     .placeholder = Yiylo nder dokimaa
+    .title = Yiytu
 pdfjs-find-previous-button =
     .title = Yiylo cilol ɓennugol konngol ngol
 pdfjs-find-previous-button-label = Ɓennuɗo
@@ -206,9 +178,6 @@ pdfjs-page-scale-actual = Ɓetol Jaati
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -235,13 +204,3 @@ pdfjs-password-invalid = Finnde moƴƴaani. Tiiɗno eto kadi.
 pdfjs-password-ok-button = OK
 pdfjs-password-cancel-button = Haaytu
 pdfjs-web-fonts-disabled = Ponte geese ko daaƴaaɗe: horiima huutoraade ponte PDF coomtoraaɗe.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

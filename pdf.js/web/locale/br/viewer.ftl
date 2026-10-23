@@ -99,24 +99,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Perzhioù an teul…
 pdfjs-document-properties-file-name = Anv restr:
 pdfjs-document-properties-file-size = Ment ar restr:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } Ke ({ $size_b } eizhbit)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } Me ({ $size_b } eizhbit)
 pdfjs-document-properties-title = Titl:
 pdfjs-document-properties-author = Aozer:
 pdfjs-document-properties-subject = Danvez:
 pdfjs-document-properties-keywords = Gerioù-alc'hwez:
 pdfjs-document-properties-creation-date = Deiziad krouiñ:
 pdfjs-document-properties-modification-date = Deiziad kemmañ:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Krouer:
 pdfjs-document-properties-producer = Kenderc'her PDF:
 pdfjs-document-properties-version = Handelv PDF:
@@ -162,23 +150,6 @@ pdfjs-printing-not-ready = Kemenn: N'hall ket bezañ moullet ar restr PDF rak n'
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Diskouez/kuzhat ar varrenn gostez
-pdfjs-toggle-sidebar-notification-button =
-    .title = Trec'haoliñ ar varrenn-gostez (ur steuñv pe stagadennoù a zo en teul)
-pdfjs-toggle-sidebar-button-label = Diskouez/kuzhat ar varrenn gostez
-pdfjs-document-outline-button =
-    .title = Diskouez steuñv an teul (daouglikit evit brasaat/bihanaat an holl elfennoù)
-pdfjs-document-outline-button-label = Sinedoù an teuliad
-pdfjs-attachments-button =
-    .title = Diskouez ar c'henstagadurioù
-pdfjs-attachments-button-label = Kenstagadurioù
-pdfjs-layers-button =
-    .title = Diskouez ar gwiskadoù (daou-glikañ evit adderaouekaat an holl gwiskadoù d'o stad dre ziouer)
-pdfjs-layers-button-label = Gwiskadoù
-pdfjs-thumbs-button =
-    .title = Diskouez ar melvennoù
-pdfjs-thumbs-button-label = Melvennoù
 pdfjs-findbar-button =
     .title = Klask e-barzh an teuliad
 pdfjs-findbar-button-label = Klask
@@ -188,25 +159,21 @@ pdfjs-additional-layers = Gwiskadoù ouzhpenn
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Pajenn { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Melvenn ar bajenn { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Klask
     .placeholder = Klask e-barzh an teuliad
+    .title = Klask
 pdfjs-find-previous-button =
     .title = Kavout an tamm frazenn kent o klotañ ganti
 pdfjs-find-previous-button-label = Kent
 pdfjs-find-next-button =
     .title = Kavout an tamm frazenn war-lerc'h o klotañ ganti
 pdfjs-find-next-button-label = War-lerc'h
-pdfjs-find-highlight-checkbox = Usskediñ pep tra
+pdfjs-find-highlight-checkbox = Sklêrijennañ pep tra
 pdfjs-find-match-case-checkbox-label = Teurel evezh ouzh ar pennlizherennoù
 pdfjs-find-match-diacritics-checkbox-label = Doujañ d’an tiredoù
 pdfjs-find-entire-word-checkbox-label = Gerioù a-bezh
@@ -241,10 +208,6 @@ pdfjs-rendering-error = Degouezhet ez eus bet ur fazi e-pad skrammañ ar bajenna
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -272,9 +235,13 @@ pdfjs-editor-ink-button-label = Tresañ
 pdfjs-editor-stamp-button =
     .title = Ouzhpennañ pe aozañ skeudennoù
 pdfjs-editor-stamp-button-label = Ouzhpennañ pe aozañ skeudennoù
-
-## Remove button for the various kind of editor.
-
+pdfjs-editor-highlight-button =
+    .title = Sklerijennañ
+pdfjs-editor-highlight-button-label = Sklerijennañ
+pdfjs-highlight-floating-button1 =
+    .aria-label = Sklerijennañ
+    .title = Sklerijennañ
+pdfjs-highlight-floating-button-label = Sklerijennañ
 
 ##
 
@@ -289,25 +256,20 @@ pdfjs-editor-stamp-add-image-button =
 pdfjs-editor-stamp-add-image-button-label = Ouzhpennañ ur skeudenn
 # This refers to the thickness of the line used for free highlighting (not bound to text)
 pdfjs-editor-free-highlight-thickness-input = Tevded
-pdfjs-free-text =
-    .aria-label = Aozer testennoù
-pdfjs-ink =
-    .aria-label = Aozer tresoù
-pdfjs-ink-canvas =
-    .aria-label = Skeudenn bet krouet gant an implijer·ez
 
 ## Alt-text dialog
 
 pdfjs-editor-alt-text-add-description-label = Ouzhpennañ un deskrivadur
 pdfjs-editor-alt-text-cancel-button = Nullañ
 pdfjs-editor-alt-text-save-button = Enrollañ
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-
+# .placeholder: This is a placeholder for the alt text input area
+pdfjs-editor-alt-text-textarea =
+    .placeholder = Da skouer, “Ur paotr yaouank ouzh taol o tebriñ boued”
 
 ## Color picker
 
+# This means "Color used to highlight text"
+pdfjs-editor-highlight-colorpicker-label = Liv sklêrijennañ
 pdfjs-editor-colorpicker-button =
     .title = Cheñch liv
 pdfjs-editor-colorpicker-yellow =
@@ -334,7 +296,4 @@ pdfjs-editor-new-alt-text-error-close-button = Serriñ
 
 ## Image alt-text settings
 
-pdfjs-editor-alt-text-settings-delete-model-button = Dilemel
-pdfjs-editor-alt-text-settings-download-model-button = Pellgargañ
-pdfjs-editor-alt-text-settings-downloading-model-button = O pellgargañ…
 pdfjs-editor-alt-text-settings-close-button = Serriñ

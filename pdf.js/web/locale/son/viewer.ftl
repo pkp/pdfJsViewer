@@ -65,36 +65,16 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Takadda mayrawey…
 pdfjs-document-properties-file-name = Tuku maa:
 pdfjs-document-properties-file-size = Tuku adadu:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = KB { $size_kb } (cebsu-ize { $size_b })
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = MB { $size_mb } (cebsu-ize { $size_b })
 pdfjs-document-properties-title = Tiiramaa:
 pdfjs-document-properties-author = Hantumkaw:
 pdfjs-document-properties-subject = Dalil:
 pdfjs-document-properties-keywords = Kufalkalimawey:
 pdfjs-document-properties-creation-date = Teeyan han:
 pdfjs-document-properties-modification-date = Barmayan han:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Teekaw:
 pdfjs-document-properties-producer = PDF berandikaw:
 pdfjs-document-properties-version = PDF dumi:
 pdfjs-document-properties-page-count = Moo hinna:
-
-## Variables:
-##   $width (Number) - the width of the (current) page
-##   $height (Number) - the height of the (current) page
-##   $unit (String) - the unit of measurement of the (current) page
-##   $name (String) - the name of the (current) page
-##   $orientation (String) - the orientation of the (current) page
-
 
 ##
 
@@ -112,18 +92,6 @@ pdfjs-printing-not-ready = Yaamar: PDF ši zunbu ka timme karyan še.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Kanjari ceraw zuu
-pdfjs-toggle-sidebar-button-label = Kanjari ceraw zuu
-pdfjs-document-outline-button =
-    .title = Takaddaa korfur alhaaloo cebe (naagu cee hinka ka haya-izey kul hayandi/kankamandi)
-pdfjs-document-outline-button-label = Takadda filla-boŋ
-pdfjs-attachments-button =
-    .title = Hangarey cebe
-pdfjs-attachments-button-label = Hangarey
-pdfjs-thumbs-button =
-    .title = Kabeboy biyey cebe
-pdfjs-thumbs-button-label = Kabeboy biyey
 pdfjs-findbar-button =
     .title = Ceeci takaddaa ra
 pdfjs-findbar-button-label = Ceeci
@@ -132,18 +100,14 @@ pdfjs-findbar-button-label = Ceeci
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = { $page } moo
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Kabeboy bii { $page } moo še
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Ceeci
     .placeholder = Ceeci takaddaa ra…
+    .title = Ceeci
 pdfjs-find-previous-button =
     .title = Kalimaɲaŋoo bangayri bisantaa ceeci
 pdfjs-find-previous-button-label = Bisante
@@ -165,9 +129,6 @@ pdfjs-page-scale-actual = Adadu cimi
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -194,13 +155,3 @@ pdfjs-password-invalid = Šennikufal laalo. Ceeci koyne taare.
 pdfjs-password-ok-button = Ayyo
 pdfjs-password-cancel-button = Naŋ
 pdfjs-web-fonts-disabled = Interneti šigirawey kay: ši hin ka goy nda PDF šigira hurantey.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

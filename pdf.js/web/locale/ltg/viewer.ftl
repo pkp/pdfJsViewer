@@ -89,24 +89,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Dokumenta īstatiejumi…
 pdfjs-document-properties-file-name = Faila nūsaukums:
 pdfjs-document-properties-file-size = Faila izmārs:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } biti)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } biti)
 pdfjs-document-properties-title = Nūsaukums:
 pdfjs-document-properties-author = Autors:
 pdfjs-document-properties-subject = Tema:
 pdfjs-document-properties-keywords = Atslāgi vuordi:
 pdfjs-document-properties-creation-date = Izveides datums:
 pdfjs-document-properties-modification-date = lobuošonys datums:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Radeituojs:
 pdfjs-document-properties-producer = PDF producents:
 pdfjs-document-properties-version = PDF verseja:
@@ -152,18 +140,6 @@ pdfjs-printing-not-ready = Uzmaneibu: PDF nav pilneibā īluodeits drukuošonai.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Puorslēgt suonu jūslu
-pdfjs-toggle-sidebar-button-label = Puorslēgt suonu jūslu
-pdfjs-document-outline-button =
-    .title = Show Document Outline (double-click to expand/collapse all items)
-pdfjs-document-outline-button-label = Dokumenta saturs
-pdfjs-attachments-button =
-    .title = Show Attachments
-pdfjs-attachments-button-label = Attachments
-pdfjs-thumbs-button =
-    .title = Paruodeit seiktālus
-pdfjs-thumbs-button-label = Seiktāli
 pdfjs-findbar-button =
     .title = Mekleit dokumentā
 pdfjs-findbar-button-label = Mekleit
@@ -172,18 +148,14 @@ pdfjs-findbar-button-label = Mekleit
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Lopa { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Lopys { $page } seiktāls
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Mekleit
     .placeholder = Mekleit dokumentā…
+    .title = Mekleit
 pdfjs-find-previous-button =
     .title = Atrast īprīkšejū
 pdfjs-find-previous-button-label = Īprīkšejā
@@ -205,9 +177,6 @@ pdfjs-page-scale-actual = Patīsais izmārs
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -234,13 +203,3 @@ pdfjs-password-invalid = Napareiza parole, raugit vēļreiz.
 pdfjs-password-ok-button = Labi
 pdfjs-password-cancel-button = Atceļt
 pdfjs-web-fonts-disabled = Šķārsteikla fonti nav aktivizāti: Navar īgult PDF fontus.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

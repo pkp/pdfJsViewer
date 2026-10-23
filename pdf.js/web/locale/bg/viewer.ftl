@@ -112,14 +112,6 @@ pdfjs-document-properties-size-kb = { NUMBER($kb, maximumSignificantDigits: 3) }
 #   $mb (Number) - the PDF file size in megabytes
 #   $b (Number) - the PDF file size in bytes
 pdfjs-document-properties-size-mb = { NUMBER($mb, maximumSignificantDigits: 3) } МБ ({ $b } байта)
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } КБ ({ $size_b } байта)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } МБ ({ $size_b } байта)
 pdfjs-document-properties-title = Заглавие:
 pdfjs-document-properties-author = Автор:
 pdfjs-document-properties-subject = Тема:
@@ -129,10 +121,6 @@ pdfjs-document-properties-modification-date = Дата на промяна:
 # Variables:
 #   $dateObj (Date) - the creation/modification date and time of the PDF file
 pdfjs-document-properties-date-time-string = { DATETIME($dateObj, dateStyle: "short", timeStyle: "medium") }
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Създател:
 pdfjs-document-properties-producer = PDF произведен от:
 pdfjs-document-properties-version = Издание на PDF:
@@ -178,23 +166,6 @@ pdfjs-printing-not-ready = Внимание: Този PDF файл не е на�
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Превключване на страничната лента
-pdfjs-toggle-sidebar-notification-button =
-    .title = Превключване на страничната лента (документът има структура/прикачени файлове/слоеве)
-pdfjs-toggle-sidebar-button-label = Превключване на страничната лента
-pdfjs-document-outline-button =
-    .title = Показване на структурата на документа (двукратно щракване за свиване/разгъване на всичко)
-pdfjs-document-outline-button-label = Структура на документа
-pdfjs-attachments-button =
-    .title = Показване на притурките
-pdfjs-attachments-button-label = Притурки
-pdfjs-layers-button =
-    .title = Показване на слоевете (двукратно щракване за възстановяване на всички слоеве към състоянието по подразбиране)
-pdfjs-layers-button-label = Слоеве
-pdfjs-thumbs-button =
-    .title = Показване на миниатюрите
-pdfjs-thumbs-button-label = Миниатюри
 pdfjs-current-outline-item-button =
     .title = Намиране на текущия елемент от структурата
 pdfjs-current-outline-item-button-label = Текущ елемент от структурата
@@ -207,18 +178,14 @@ pdfjs-additional-layers = Допълнителни слоеве
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Страница { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Миниатюра на страница { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Търсене
     .placeholder = Търсене в документа…
+    .title = Търсене
 pdfjs-find-previous-button =
     .title = Намиране на предишно съвпадение на фразата
 pdfjs-find-previous-button-label = Предишна
@@ -275,10 +242,6 @@ pdfjs-rendering-error = Грешка при изчертаване на стра
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -332,19 +295,15 @@ pdfjs-editor-ink-opacity-input = Прозрачност
 pdfjs-editor-stamp-add-image-button =
     .title = Добавяне на изображение
 pdfjs-editor-stamp-add-image-button-label = Добавяне на изображение
-pdfjs-free-text =
+# .default-content is used as a placeholder in an empty text editor.
+pdfjs-free-text2 =
     .aria-label = Текстов редактор
-pdfjs-free-text-default-content = Започнете да пишете…
-pdfjs-ink =
-    .aria-label = Промяна на рисунка
-pdfjs-ink-canvas =
-    .aria-label = Изображение, създадено от потребител
+    .default-content = Започнете да пишете…
+pdfjs-editor-comments-sidebar-close-button-label = Затваряне на страничната лента
 
 ## Alt-text dialog
 
-# Alternative text (alt text) helps when people can't see the image.
 pdfjs-editor-alt-text-button-label = Алтернативен текст
-pdfjs-editor-alt-text-edit-button-label = Промяна на алтернативния текст
 pdfjs-editor-alt-text-dialog-label = Изберете от възможностите
 pdfjs-editor-alt-text-dialog-description = Алтернативният текст помага на потребителите, когато не могат да видят изображението или то не се зарежда.
 pdfjs-editor-alt-text-add-description-label = Добавяне на описание
@@ -361,14 +320,6 @@ pdfjs-editor-alt-text-textarea =
 ## Editor resizers
 ## This is used in an aria label to help to understand the role of the resizer.
 
-pdfjs-editor-resizer-label-top-left = Горен ляв ъгъл — преоразмеряване
-pdfjs-editor-resizer-label-top-middle = Горе в средата — преоразмеряване
-pdfjs-editor-resizer-label-top-right = Горен десен ъгъл — преоразмеряване
-pdfjs-editor-resizer-label-middle-right = Дясно в средата — преоразмеряване
-pdfjs-editor-resizer-label-bottom-right = Долен десен ъгъл — преоразмеряване
-pdfjs-editor-resizer-label-bottom-middle = Долу в средата — преоразмеряване
-pdfjs-editor-resizer-label-bottom-left = Долен ляв ъгъл — преоразмеряване
-pdfjs-editor-resizer-label-middle-left = Ляво в средата — преоразмеряване
 pdfjs-editor-resizer-top-left =
     .aria-label = Горен ляв ъгъл — преоразмеряване
 pdfjs-editor-resizer-top-middle =
@@ -405,14 +356,37 @@ pdfjs-editor-colorpicker-pink =
 pdfjs-editor-colorpicker-red =
     .title = Червено
 
-## Show all highlights
-## This is a toggle button to show/hide all the highlights.
-
-
 ## New alt-text dialog
 ## Group note for entire feature: Alternative text (alt text) helps when people can't see the image. This feature includes a tool to create alt text automatically using an AI model that works locally on the user's device to preserve privacy.
 
+pdfjs-editor-new-alt-text-disclaimer-learn-more-url = Научете повече
 pdfjs-editor-new-alt-text-not-now-button = Не сега
 
 ## Image alt-text settings
 
+pdfjs-editor-alt-text-settings-show-dialog-button-label = Показване на заместващ текстов редактор веднага при добавяне на изображение
+
+## Controls
+
+pdfjs-editor-add-signature-image-upload-error-description = Проверете мрежовата си връзка или опитайте с друго изображение.
+
+## The view manager is a sidebar displaying different views:
+##  - thumbnails;
+##  - outline;
+##  - attachments;
+##  - layers.
+## The thumbnails view is used to edit the pdf: remove/insert pages, ...
+
+pdfjs-toggle-views-manager-button1-label = Управление на страници
+pdfjs-views-manager-pages-status-action-button-label = Управление
+pdfjs-toggle-views-manager-button1 =
+    .title = Управление на страници
+
+## Per-signature certificate row. The variants with an issuer / date in
+## parentheses embed fully-localized context — no English fall-through.
+##
+## Variables:
+##   $issuer (String) - issuer or subject common name from the cert.
+##   $dateObj (Date)  - notAfter date for the expired-with-date form.
+
+pdfjs-digital-signature-properties-certificate-expired = Сертификат: с изтекъл срок на валидност

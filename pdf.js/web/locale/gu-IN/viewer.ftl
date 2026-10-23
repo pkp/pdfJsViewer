@@ -89,24 +89,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = દસ્તાવેજ ગુણધર્મો…
 pdfjs-document-properties-file-name = ફાઇલ નામ:
 pdfjs-document-properties-file-size = ફાઇલ માપ:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } બાઇટ)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } બાઇટ)
 pdfjs-document-properties-title = શીર્ષક:
 pdfjs-document-properties-author = લેખક:
 pdfjs-document-properties-subject = વિષય:
 pdfjs-document-properties-keywords = કિવર્ડ:
 pdfjs-document-properties-creation-date = નિર્માણ તારીખ:
 pdfjs-document-properties-modification-date = ફેરફાર તારીખ:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = નિર્માતા:
 pdfjs-document-properties-producer = PDF નિર્માતા:
 pdfjs-document-properties-version = PDF આવૃત્તિ:
@@ -152,18 +140,6 @@ pdfjs-printing-not-ready = Warning: PDF એ છાપવા માટે સં�
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = ટૉગલ બાજુપટ્ટી
-pdfjs-toggle-sidebar-button-label = ટૉગલ બાજુપટ્ટી
-pdfjs-document-outline-button =
-    .title = દસ્તાવેજની રૂપરેખા બતાવો(બધી આઇટમ્સને વિસ્તૃત/સંકુચિત કરવા માટે ડબલ-ક્લિક કરો)
-pdfjs-document-outline-button-label = દસ્તાવેજ રૂપરેખા
-pdfjs-attachments-button =
-    .title = જોડાણોને બતાવો
-pdfjs-attachments-button-label = જોડાણો
-pdfjs-thumbs-button =
-    .title = થંબનેલ્સ બતાવો
-pdfjs-thumbs-button-label = થંબનેલ્સ
 pdfjs-findbar-button =
     .title = દસ્તાવેજમાં શોધો
 pdfjs-findbar-button-label = શોધો
@@ -172,18 +148,14 @@ pdfjs-findbar-button-label = શોધો
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = પાનું { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = પાનાં { $page } નું થંબનેલ્સ
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = શોધો
     .placeholder = દસ્તાવેજમાં શોધો…
+    .title = શોધો
 pdfjs-find-previous-button =
     .title = શબ્દસમૂહની પાછલી ઘટનાને શોધો
 pdfjs-find-previous-button-label = પહેલાંનુ
@@ -206,9 +178,6 @@ pdfjs-page-scale-actual = ચોક્કસ માપ
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -235,13 +204,3 @@ pdfjs-password-invalid = અયોગ્ય પાસવર્ડ. મહેર�
 pdfjs-password-ok-button = બરાબર
 pdfjs-password-cancel-button = રદ કરો
 pdfjs-web-fonts-disabled = વેબ ફોન્ટ નિષ્ક્રિય થયેલ છે: ઍમ્બેડ થયેલ PDF ફોન્ટને વાપરવાનું અસમર્થ.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

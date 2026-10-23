@@ -71,36 +71,16 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Airíonna na Cáipéise…
 pdfjs-document-properties-file-name = Ainm an chomhaid:
 pdfjs-document-properties-file-size = Méid an chomhaid:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } kB ({ $size_b } beart)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } beart)
 pdfjs-document-properties-title = Teideal:
 pdfjs-document-properties-author = Údar:
 pdfjs-document-properties-subject = Ábhar:
 pdfjs-document-properties-keywords = Eochairfhocail:
 pdfjs-document-properties-creation-date = Dáta Cruthaithe:
 pdfjs-document-properties-modification-date = Dáta Athraithe:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Cruthaitheoir:
 pdfjs-document-properties-producer = Cruthaitheoir an PDF:
 pdfjs-document-properties-version = Leagan PDF:
 pdfjs-document-properties-page-count = Líon Leathanach:
-
-## Variables:
-##   $width (Number) - the width of the (current) page
-##   $height (Number) - the height of the (current) page
-##   $unit (String) - the unit of measurement of the (current) page
-##   $name (String) - the name of the (current) page
-##   $orientation (String) - the orientation of the (current) page
-
 
 ##
 
@@ -118,18 +98,6 @@ pdfjs-printing-not-ready = Rabhadh: Ní féidir an PDF a phriontáil go dtí go 
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Scoránaigh an Barra Taoibh
-pdfjs-toggle-sidebar-button-label = Scoránaigh an Barra Taoibh
-pdfjs-document-outline-button =
-    .title = Taispeáin Imlíne na Cáipéise (déchliceáil chun chuile rud a leathnú nó a laghdú)
-pdfjs-document-outline-button-label = Creatlach na Cáipéise
-pdfjs-attachments-button =
-    .title = Taispeáin Iatáin
-pdfjs-attachments-button-label = Iatáin
-pdfjs-thumbs-button =
-    .title = Taispeáin Mionsamhlacha
-pdfjs-thumbs-button-label = Mionsamhlacha
 pdfjs-findbar-button =
     .title = Aimsigh sa Cháipéis
 pdfjs-findbar-button-label = Aimsigh
@@ -138,18 +106,14 @@ pdfjs-findbar-button-label = Aimsigh
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Leathanach { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Mionsamhail Leathanaigh { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Aimsigh
     .placeholder = Aimsigh sa cháipéis…
+    .title = Aimsigh
 pdfjs-find-previous-button =
     .title = Aimsigh an sampla roimhe seo den nath seo
 pdfjs-find-previous-button-label = Roimhe seo
@@ -172,9 +136,6 @@ pdfjs-page-scale-actual = Fíormhéid
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -201,13 +162,3 @@ pdfjs-password-invalid = Focal faire mícheart. Déan iarracht eile.
 pdfjs-password-ok-button = OK
 pdfjs-password-cancel-button = Cealaigh
 pdfjs-web-fonts-disabled = Tá clófhoirne Gréasáin díchumasaithe: ní féidir clófhoirne leabaithe PDF a úsáid.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-
