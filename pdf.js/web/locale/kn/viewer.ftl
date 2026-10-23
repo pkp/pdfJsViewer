@@ -71,24 +71,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = ಡಾಕ್ಯುಮೆಂಟ್‌ ಗುಣಗಳು...
 pdfjs-document-properties-file-name = ಕಡತದ ಹೆಸರು:
 pdfjs-document-properties-file-size = ಕಡತದ ಗಾತ್ರ:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } ಬೈಟ್‍ಗಳು)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } ಬೈಟ್‍ಗಳು)
 pdfjs-document-properties-title = ಶೀರ್ಷಿಕೆ:
 pdfjs-document-properties-author = ಕರ್ತೃ:
 pdfjs-document-properties-subject = ವಿಷಯ:
 pdfjs-document-properties-keywords = ಮುಖ್ಯಪದಗಳು:
 pdfjs-document-properties-creation-date = ರಚಿಸಿದ ದಿನಾಂಕ:
 pdfjs-document-properties-modification-date = ಮಾರ್ಪಡಿಸಲಾದ ದಿನಾಂಕ:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = ರಚಿಸಿದವರು:
 pdfjs-document-properties-producer = PDF ಉತ್ಪಾದಕ:
 pdfjs-document-properties-version = PDF ಆವೃತ್ತಿ:
@@ -96,14 +84,6 @@ pdfjs-document-properties-page-count = ಪುಟದ ಎಣಿಕೆ:
 pdfjs-document-properties-page-size-unit-inches = ಇದರಲ್ಲಿ
 pdfjs-document-properties-page-size-orientation-portrait = ಭಾವಚಿತ್ರ
 pdfjs-document-properties-page-size-orientation-landscape = ಪ್ರಕೃತಿ ಚಿತ್ರ
-
-## Variables:
-##   $width (Number) - the width of the (current) page
-##   $height (Number) - the height of the (current) page
-##   $unit (String) - the unit of measurement of the (current) page
-##   $name (String) - the name of the (current) page
-##   $orientation (String) - the orientation of the (current) page
-
 
 ##
 
@@ -121,16 +101,6 @@ pdfjs-printing-not-ready = ಎಚ್ಚರಿಕೆ: PDF ಕಡತವು ಮು�
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = ಬದಿಪಟ್ಟಿಯನ್ನು ಹೊರಳಿಸು
-pdfjs-toggle-sidebar-button-label = ಬದಿಪಟ್ಟಿಯನ್ನು ಹೊರಳಿಸು
-pdfjs-document-outline-button-label = ದಸ್ತಾವೇಜಿನ ಹೊರರೇಖೆ
-pdfjs-attachments-button =
-    .title = ಲಗತ್ತುಗಳನ್ನು ತೋರಿಸು
-pdfjs-attachments-button-label = ಲಗತ್ತುಗಳು
-pdfjs-thumbs-button =
-    .title = ಚಿಕ್ಕಚಿತ್ರದಂತೆ ತೋರಿಸು
-pdfjs-thumbs-button-label = ಚಿಕ್ಕಚಿತ್ರಗಳು
 pdfjs-findbar-button =
     .title = ದಸ್ತಾವೇಜಿನಲ್ಲಿ ಹುಡುಕು
 pdfjs-findbar-button-label = ಹುಡುಕು
@@ -139,18 +109,14 @@ pdfjs-findbar-button-label = ಹುಡುಕು
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = ಪುಟ { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = ಪುಟವನ್ನು ಚಿಕ್ಕಚಿತ್ರದಂತೆ ತೋರಿಸು { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = ಹುಡುಕು
     .placeholder = ದಸ್ತಾವೇಜಿನಲ್ಲಿ ಹುಡುಕು…
+    .title = ಹುಡುಕು
 pdfjs-find-previous-button =
     .title = ವಾಕ್ಯದ ಹಿಂದಿನ ಇರುವಿಕೆಯನ್ನು ಹುಡುಕು
 pdfjs-find-previous-button-label = ಹಿಂದಿನ
@@ -172,9 +138,6 @@ pdfjs-page-scale-actual = ನಿಜವಾದ ಗಾತ್ರ
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -201,13 +164,3 @@ pdfjs-password-invalid = ಅಮಾನ್ಯವಾದ ಗುಪ್ತಪದ, ದ�
 pdfjs-password-ok-button = OK
 pdfjs-password-cancel-button = ರದ್ದು ಮಾಡು
 pdfjs-web-fonts-disabled = ಜಾಲ ಅಕ್ಷರಶೈಲಿಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ: ಅಡಕಗೊಳಿಸಿದ PDF ಅಕ್ಷರಶೈಲಿಗಳನ್ನು ಬಳಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

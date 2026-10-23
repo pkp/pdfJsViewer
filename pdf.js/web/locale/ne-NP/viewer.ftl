@@ -83,24 +83,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = कागजात विशेषताहरू...
 pdfjs-document-properties-file-name = फाइल नाम:
 pdfjs-document-properties-file-size = फाइल आकार:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } bytes)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } bytes)
 pdfjs-document-properties-title = शीर्षक:
 pdfjs-document-properties-author = लेखक:
 pdfjs-document-properties-subject = विषयः
 pdfjs-document-properties-keywords = शब्दकुञ्जीः
 pdfjs-document-properties-creation-date = सिर्जना गरिएको मिति:
 pdfjs-document-properties-modification-date = परिमार्जित मिति:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = सर्जक:
 pdfjs-document-properties-producer = PDF निर्माता:
 pdfjs-document-properties-version = PDF संस्करण
@@ -112,14 +100,6 @@ pdfjs-document-properties-page-size-orientation-portrait = पोट्रेट
 pdfjs-document-properties-page-size-orientation-landscape = परिदृश्य
 pdfjs-document-properties-page-size-name-letter = अक्षर
 pdfjs-document-properties-page-size-name-legal = कानूनी
-
-## Variables:
-##   $width (Number) - the width of the (current) page
-##   $height (Number) - the height of the (current) page
-##   $unit (String) - the unit of measurement of the (current) page
-##   $name (String) - the name of the (current) page
-##   $orientation (String) - the orientation of the (current) page
-
 
 ##
 
@@ -139,18 +119,6 @@ pdfjs-printing-not-ready = चेतावनी: PDF मुद्रणका �
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = टगल साइडबार
-pdfjs-toggle-sidebar-button-label = टगल साइडबार
-pdfjs-document-outline-button =
-    .title = कागजातको रूपरेखा देखाउनुहोस् (सबै वस्तुहरू विस्तार/पतन गर्न डबल-क्लिक गर्नुहोस्)
-pdfjs-document-outline-button-label = दस्तावेजको रूपरेखा
-pdfjs-attachments-button =
-    .title = संलग्नहरू देखाउनुहोस्
-pdfjs-attachments-button-label = संलग्नकहरू
-pdfjs-thumbs-button =
-    .title = थम्बनेलहरू देखाउनुहोस्
-pdfjs-thumbs-button-label = थम्बनेलहरू
 pdfjs-findbar-button =
     .title = कागजातमा फेला पार्नुहोस्
 pdfjs-findbar-button-label = फेला पार्नुहोस्
@@ -159,18 +127,14 @@ pdfjs-findbar-button-label = फेला पार्नुहोस्
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = पृष्ठ { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = { $page } पृष्ठको थम्बनेल
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = फेला पार्नुहोस्
     .placeholder = कागजातमा फेला पार्नुहोस्…
+    .title = फेला पार्नुहोस्
 pdfjs-find-previous-button =
     .title = यस वाक्यांशको अघिल्लो घटना फेला पार्नुहोस्
 pdfjs-find-previous-button-label = अघिल्लो
@@ -193,9 +157,6 @@ pdfjs-page-scale-actual = वास्तविक आकार
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -222,13 +183,3 @@ pdfjs-password-invalid = अवैध गोप्यशब्द। पुन�
 pdfjs-password-ok-button = ठिक छ
 pdfjs-password-cancel-button = रद्द गर्नुहोस्
 pdfjs-web-fonts-disabled = वेब फन्ट असक्षम छन्: एम्बेडेड PDF फन्ट प्रयोग गर्न असमर्थ।
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

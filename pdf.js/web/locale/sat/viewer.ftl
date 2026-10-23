@@ -104,24 +104,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = ᱫᱚᱞᱤᱞ ᱜᱩᱱᱠᱚ …
 pdfjs-document-properties-file-name = ᱨᱮᱫᱽ ᱧᱩᱛᱩᱢ :
 pdfjs-document-properties-file-size = ᱨᱮᱫᱽ ᱢᱟᱯ :
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } ᱵᱟᱭᱤᱴ ᱠᱚ)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } ᱵᱟᱭᱤᱴ ᱠᱚ)
 pdfjs-document-properties-title = ᱧᱩᱛᱩᱢ :
 pdfjs-document-properties-author = ᱚᱱᱚᱞᱤᱭᱟᱹ :
 pdfjs-document-properties-subject = ᱵᱤᱥᱚᱭ :
 pdfjs-document-properties-keywords = ᱠᱟᱹᱴᱷᱤ ᱥᱟᱵᱟᱫᱽ :
 pdfjs-document-properties-creation-date = ᱛᱮᱭᱟᱨ ᱢᱟᱸᱦᱤᱛ :
 pdfjs-document-properties-modification-date = ᱵᱚᱫᱚᱞ ᱦᱚᱪᱚ ᱢᱟᱹᱦᱤᱛ :
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = ᱵᱮᱱᱟᱣᱤᱡ :
 pdfjs-document-properties-producer = PDF ᱛᱮᱭᱟᱨ ᱚᱰᱚᱠᱤᱡ :
 pdfjs-document-properties-version = PDF ᱵᱷᱟᱹᱨᱥᱚᱱ :
@@ -167,23 +155,6 @@ pdfjs-printing-not-ready = ᱦᱩᱥᱤᱭᱟᱹᱨ : ᱪᱷᱟᱯᱟ ᱞᱟᱹ�
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = ᱫᱷᱟᱨᱮᱵᱟᱨ ᱥᱮᱫ ᱩᱪᱟᱹᱲᱚᱜ ᱢᱮ
-pdfjs-toggle-sidebar-notification-button =
-    .title = ᱫᱷᱟᱨᱮᱵᱟᱨ ᱥᱮᱫ ᱩᱪᱟᱹᱲᱚᱜ ᱢᱮ  (ᱫᱚᱞᱤᱞ ᱨᱮ ᱟᱣᱴᱞᱟᱭᱤᱢ ᱢᱮᱱᱟᱜᱼᱟ/ᱞᱟᱪᱷᱟᱠᱚ/ᱯᱚᱨᱚᱛᱠᱚ)
-pdfjs-toggle-sidebar-button-label = ᱫᱷᱟᱨᱮᱵᱟᱨ ᱥᱮᱫ ᱩᱪᱟᱹᱲᱚᱜ ᱢᱮ
-pdfjs-document-outline-button =
-    .title = ᱫᱚᱞᱚᱞ ᱟᱣᱴᱞᱟᱭᱤᱱ ᱫᱮᱠᱷᱟᱣ ᱢᱮ (ᱡᱷᱚᱛᱚ ᱡᱤᱱᱤᱥᱠᱚ ᱵᱟᱨ ᱡᱮᱠᱷᱟ ᱚᱛᱟ ᱠᱮᱛᱮ ᱡᱷᱟᱹᱞ/ᱦᱩᱰᱤᱧ ᱪᱷᱚᱭ ᱢᱮ)
-pdfjs-document-outline-button-label = ᱫᱚᱞᱤᱞ ᱛᱮᱭᱟᱨ ᱛᱮᱫ
-pdfjs-attachments-button =
-    .title = ᱞᱟᱴᱷᱟ ᱥᱮᱞᱮᱫ ᱠᱚ ᱩᱫᱩᱜᱽ ᱢᱮ
-pdfjs-attachments-button-label = ᱞᱟᱴᱷᱟ ᱥᱮᱞᱮᱫ ᱠᱚ
-pdfjs-layers-button =
-    .title = ᱯᱚᱨᱚᱛ ᱫᱮᱠᱷᱟᱣ ᱢᱮ (ᱢᱩᱞ ᱡᱟᱭᱜᱟ ᱛᱮ ᱡᱷᱚᱛᱚ ᱯᱚᱨᱚᱛᱠᱚ ᱨᱤᱥᱮᱴ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱨ ᱡᱮᱠᱷᱟ ᱚᱛᱚᱭ ᱢᱮ)
-pdfjs-layers-button-label = ᱯᱚᱨᱚᱛᱠᱚ
-pdfjs-thumbs-button =
-    .title = ᱪᱤᱛᱟᱹᱨ ᱟᱦᱞᱟ ᱠᱚ ᱩᱫᱩᱜᱽ ᱢᱮ
-pdfjs-thumbs-button-label = ᱪᱤᱛᱟᱹᱨ ᱟᱦᱞᱟ ᱠᱚ
 pdfjs-current-outline-item-button =
     .title = ᱱᱤᱛᱚᱜᱟᱜ ᱟᱣᱴᱞᱟᱭᱤᱱ ᱡᱟᱱᱤᱥ ᱯᱟᱱᱛᱮ ᱢᱮ
 pdfjs-current-outline-item-button-label = ᱱᱤᱛᱚᱜᱟᱜ ᱟᱣᱴᱞᱟᱭᱤᱱ ᱡᱟᱱᱤᱥ
@@ -196,18 +167,14 @@ pdfjs-additional-layers = ᱵᱟᱹᱲᱛᱤ ᱯᱚᱨᱚᱛᱠᱚ
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = { $page } ᱥᱟᱦᱴᱟ
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = { $page } ᱥᱟᱦᱴᱟ ᱨᱮᱭᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱟᱦᱞᱟ
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ
     .placeholder = ᱫᱚᱞᱤᱞ ᱨᱮ ᱯᱟᱱᱛᱮ ᱢᱮ …
+    .title = ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ
 pdfjs-find-previous-button =
     .title = ᱟᱭᱟᱛ ᱦᱤᱸᱥ ᱨᱮᱭᱟᱜ ᱯᱟᱹᱦᱤᱞ ᱥᱮᱫᱟᱜ ᱚᱰᱚᱠ ᱧᱟᱢ ᱢᱮ
 pdfjs-find-previous-button-label = ᱢᱟᱲᱟᱝᱟᱜ
@@ -249,10 +216,6 @@ pdfjs-rendering-error = ᱥᱟᱦᱴᱟ ᱮᱢ ᱡᱚᱦᱚᱠ ᱢᱤᱫ ᱵᱷ�
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -281,9 +244,6 @@ pdfjs-editor-stamp-button =
     .title = ᱪᱤᱛᱟᱹᱨᱠᱚ ᱥᱮᱞᱮᱫ ᱥᱮ ᱥᱟᱯᱲᱟᱣ ᱢᱮ
 pdfjs-editor-stamp-button-label = ᱪᱤᱛᱟᱹᱨᱠᱚ ᱥᱮᱞᱮᱫ ᱥᱮ ᱥᱟᱯᱲᱟᱣ ᱢᱮ
 
-## Remove button for the various kind of editor.
-
-
 ##
 
 # Editor Parameters
@@ -295,31 +255,3 @@ pdfjs-editor-ink-opacity-input = ᱟᱨᱯᱟᱨ
 pdfjs-editor-stamp-add-image-button =
     .title = ᱪᱤᱛᱟᱹᱨ ᱥᱮᱞᱮᱫ ᱢᱮ
 pdfjs-editor-stamp-add-image-button-label = ᱪᱤᱛᱟᱹᱨ ᱥᱮᱞᱮᱫ ᱢᱮ
-pdfjs-free-text =
-    .aria-label = ᱚᱞ ᱥᱟᱯᱲᱟᱣᱤᱭᱟᱹ
-pdfjs-free-text-default-content = ᱚᱞ ᱮᱛᱦᱚᱵ ᱢᱮ …
-pdfjs-ink =
-    .aria-label = ᱛᱮᱭᱟᱨ ᱥᱟᱯᱲᱟᱣᱤᱭᱟᱹ
-pdfjs-ink-canvas =
-    .aria-label = ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱛᱮᱭᱟᱨ ᱠᱟᱫ ᱪᱤᱛᱟᱹᱨ
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-
-
-## Color picker
-
-
-## Show all highlights
-## This is a toggle button to show/hide all the highlights.
-
-
-## New alt-text dialog
-## Group note for entire feature: Alternative text (alt text) helps when people can't see the image. This feature includes a tool to create alt text automatically using an AI model that works locally on the user's device to preserve privacy.
-
-
-## Image alt-text settings
-

@@ -89,24 +89,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Sifat Dokumen…
 pdfjs-document-properties-file-name = Nama fail:
 pdfjs-document-properties-file-size = Saiz fail:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } bait)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } bait)
 pdfjs-document-properties-title = Tajuk:
 pdfjs-document-properties-author = Pengarang:
 pdfjs-document-properties-subject = Subjek:
 pdfjs-document-properties-keywords = Kata kunci:
 pdfjs-document-properties-creation-date = Masa Dicipta:
 pdfjs-document-properties-modification-date = Tarikh Ubahsuai:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Pencipta:
 pdfjs-document-properties-producer = Pengeluar PDF:
 pdfjs-document-properties-version = Versi PDF:
@@ -152,18 +140,6 @@ pdfjs-printing-not-ready = Amaran: PDF tidak sepenuhnya dimuatkan untuk dicetak.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Togol Bar Sisi
-pdfjs-toggle-sidebar-button-label = Togol Bar Sisi
-pdfjs-document-outline-button =
-    .title = Papar Rangka Dokumen (klik-dua-kali untuk kembangkan/kolaps semua item)
-pdfjs-document-outline-button-label = Rangka Dokumen
-pdfjs-attachments-button =
-    .title = Papar Lampiran
-pdfjs-attachments-button-label = Lampiran
-pdfjs-thumbs-button =
-    .title = Papar Thumbnails
-pdfjs-thumbs-button-label = Imej kecil
 pdfjs-findbar-button =
     .title = Cari didalam Dokumen
 pdfjs-findbar-button-label = Cari
@@ -172,18 +148,14 @@ pdfjs-findbar-button-label = Cari
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Halaman { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Halaman Imej kecil { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Cari
     .placeholder = Cari dalam dokumen…
+    .title = Cari
 pdfjs-find-previous-button =
     .title = Cari teks frasa berkenaan yang terdahulu
 pdfjs-find-previous-button-label = Dahulu
@@ -206,9 +178,6 @@ pdfjs-page-scale-actual = Saiz Sebenar
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -235,13 +204,3 @@ pdfjs-password-invalid = Kata laluan salah. Cuba lagi.
 pdfjs-password-ok-button = OK
 pdfjs-password-cancel-button = Batal
 pdfjs-web-fonts-disabled = Fon web dinyahdayakan: tidak dapat menggunakan fon terbenam PDF.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

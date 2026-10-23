@@ -104,24 +104,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Proprietats del document…
 pdfjs-document-properties-file-name = Nom del fichièr :
 pdfjs-document-properties-file-size = Talha del fichièr :
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } Ko ({ $size_b } octets)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } Mo ({ $size_b } octets)
 pdfjs-document-properties-title = Títol :
 pdfjs-document-properties-author = Autor :
 pdfjs-document-properties-subject = Subjècte :
 pdfjs-document-properties-keywords = Mots claus :
 pdfjs-document-properties-creation-date = Data de creacion :
 pdfjs-document-properties-modification-date = Data de modificacion :
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, a { $time }
 pdfjs-document-properties-creator = Creator :
 pdfjs-document-properties-producer = Aisina de conversion PDF :
 pdfjs-document-properties-version = Version PDF :
@@ -167,23 +155,6 @@ pdfjs-printing-not-ready = Atencion : lo PDF es pas entièrament cargat per lo
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Afichar/amagar lo panèl lateral
-pdfjs-toggle-sidebar-notification-button =
-    .title = Afichar/amagar lo panèl lateral (lo document conten esquèmas/pèças juntas/calques)
-pdfjs-toggle-sidebar-button-label = Afichar/amagar lo panèl lateral
-pdfjs-document-outline-button =
-    .title = Mostrar los esquèmas del document (dobleclicar per espandre/reduire totes los elements)
-pdfjs-document-outline-button-label = Marcapaginas del document
-pdfjs-attachments-button =
-    .title = Visualizar las pèças juntas
-pdfjs-attachments-button-label = Pèças juntas
-pdfjs-layers-button =
-    .title = Afichar los calques (doble-clicar per reïnicializar totes los calques a l’estat per defaut)
-pdfjs-layers-button-label = Calques
-pdfjs-thumbs-button =
-    .title = Afichar las vinhetas
-pdfjs-thumbs-button-label = Vinhetas
 pdfjs-current-outline-item-button =
     .title = Trobar l’element de plan actual
 pdfjs-current-outline-item-button-label = Element de plan actual
@@ -196,18 +167,14 @@ pdfjs-additional-layers = Calques suplementaris
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Pagina { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Vinheta de la pagina { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Recercar
     .placeholder = Cercar dins lo document…
+    .title = Recercar
 pdfjs-find-previous-button =
     .title = Tròba l'ocurréncia precedenta de la frasa
 pdfjs-find-previous-button-label = Precedent
@@ -264,10 +231,6 @@ pdfjs-rendering-error = Una error s'es producha pendent l'afichatge de la pagina
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date } a { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -302,8 +265,8 @@ pdfjs-editor-highlight-button =
     .title = Subrelinhar
 pdfjs-editor-highlight-button-label = Subrelinhar
 pdfjs-highlight-floating-button1 =
-    .title = Subrelinhar
     .aria-label = Subrelinhar
+    .title = Subrelinhar
 pdfjs-highlight-floating-button-label = Subrelinhar
 
 ## Remove button for the various kind of editor.
@@ -330,30 +293,21 @@ pdfjs-editor-stamp-add-image-button =
 pdfjs-editor-stamp-add-image-button-label = Apondre imatge
 # This refers to the thickness of the line used for free highlighting (not bound to text)
 pdfjs-editor-free-highlight-thickness-input = Espessor
+pdfjs-editor-signature-add-signature-button =
+    .title = Apondre una signatura novèla
+pdfjs-editor-signature-add-signature-button-label = Apondre una signatura novèla
 # .default-content is used as a placeholder in an empty text editor.
 pdfjs-free-text2 =
     .aria-label = Editor de tèxte
     .default-content = Començatz de picar…
-pdfjs-free-text =
-    .aria-label = Editor de tèxte
-pdfjs-free-text-default-content = Començatz d’escriure…
-pdfjs-ink =
-    .aria-label = Editor de dessenh
-pdfjs-ink-canvas =
-    .aria-label = Imatge creat per l’utilizaire
 
 ## Alt-text dialog
 
 pdfjs-editor-alt-text-button-label = Tèxt alternatiu
-pdfjs-editor-alt-text-edit-button-label = Modificar lo tèxt alternatiu
 pdfjs-editor-alt-text-dialog-label = Causir una opcion
 pdfjs-editor-alt-text-add-description-label = Apondre una descripcion
 pdfjs-editor-alt-text-cancel-button = Anullar
 pdfjs-editor-alt-text-save-button = Enregistrar
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-
 
 ## Color picker
 
@@ -384,15 +338,13 @@ pdfjs-editor-highlight-show-all-button =
 ## New alt-text dialog
 ## Group note for entire feature: Alternative text (alt text) helps when people can't see the image. This feature includes a tool to create alt text automatically using an AI model that works locally on the user's device to preserve privacy.
 
+pdfjs-editor-new-alt-text-not-now-button = Pas ara
 pdfjs-editor-new-alt-text-error-close-button = Tampar
 
 ## Image alt-text settings
 
 pdfjs-editor-alt-text-settings-automatic-title = Tèxte alternatiu automatic
 pdfjs-editor-alt-text-settings-create-model-button-label = Crear un tèxte alternatiu automaticament
-pdfjs-editor-alt-text-settings-delete-model-button = Suprimir
-pdfjs-editor-alt-text-settings-download-model-button = Telecargar
-pdfjs-editor-alt-text-settings-downloading-model-button = Telecargament…
 pdfjs-editor-alt-text-settings-editor-title = Editor de tèxte alternatiu
 pdfjs-editor-alt-text-settings-close-button = Tampar
 
@@ -407,3 +359,14 @@ pdfjs-editor-undo-bar-undo-button-label = Anullar
 pdfjs-editor-undo-bar-close-button =
     .title = Tampar
 pdfjs-editor-undo-bar-close-button-label = Tampar
+
+## The view manager is a sidebar displaying different views:
+##  - thumbnails;
+##  - outline;
+##  - attachments;
+##  - layers.
+## The thumbnails view is used to edit the pdf: remove/insert pages, ...
+
+# Badge used to promote a new feature in the UI, keep it as short as possible.
+# It's spelled uppercase for English, but it can be translated as usual.
+pdfjs-new-badge-content = NÒU

@@ -29,23 +29,9 @@ pdfjs-print-button =
     .title = Móol
 pdfjs-print-button-label = Móol
 
-##  Secondary toolbar and context menu
-
-
 ## Document properties dialog
 
 pdfjs-document-properties-title = Bopp:
-
-## Variables:
-##   $width (Number) - the width of the (current) page
-##   $height (Number) - the height of the (current) page
-##   $unit (String) - the unit of measurement of the (current) page
-##   $name (String) - the name of the (current) page
-##   $orientation (String) - the orientation of the (current) page
-
-
-##
-
 
 ## Print
 
@@ -53,19 +39,12 @@ pdfjs-printing-not-supported = Artu: Joowkat bii nanguwul lool mool.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-thumbs-button =
-    .title = Wone nataal yu ndaw yi
-pdfjs-thumbs-button-label = Nataal yu ndaw yi
 pdfjs-findbar-button =
     .title = Gis ci biir jukki bi
 pdfjs-findbar-button-label = Wut
 
 ## Thumbnails panel item (tooltip and alt text for images)
 
-# Variables:
-#   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Xët { $page }
 # Variables:
 #   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
@@ -92,9 +71,6 @@ pdfjs-page-scale-fit = Xët lëmm
 pdfjs-page-scale-auto = Yambalaŋ ci saa si
 pdfjs-page-scale-actual = Dayo bi am
 
-## PDF page
-
-
 ## Loading indicator messages
 
 pdfjs-loading-error = Am na njumte ci yebum dencukaay PDF bi.
@@ -115,13 +91,3 @@ pdfjs-text-annotation-type =
 
 pdfjs-password-ok-button = OK
 pdfjs-password-cancel-button = Neenal
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

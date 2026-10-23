@@ -71,24 +71,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = លក្ខណ​សម្បត្តិ​ឯកសារ…
 pdfjs-document-properties-file-name = ឈ្មោះ​ឯកសារ៖
 pdfjs-document-properties-file-size = ទំហំ​ឯកសារ៖
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } បៃ)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } បៃ)
 pdfjs-document-properties-title = ចំណងជើង៖
 pdfjs-document-properties-author = អ្នក​និពន្ធ៖
 pdfjs-document-properties-subject = ប្រធានបទ៖
 pdfjs-document-properties-keywords = ពាក្យ​គន្លឹះ៖
 pdfjs-document-properties-creation-date = កាលបរិច្ឆេទ​បង្កើត៖
 pdfjs-document-properties-modification-date = កាលបរិច្ឆេទ​កែប្រែ៖
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = អ្នក​បង្កើត៖
 pdfjs-document-properties-producer = កម្មវិធី​បង្កើត PDF ៖
 pdfjs-document-properties-version = កំណែ PDF ៖
@@ -129,18 +117,6 @@ pdfjs-printing-not-ready = ព្រមាន៖ PDF មិន​ត្រូវ
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = បិទ/បើក​គ្រាប់​រំកិល
-pdfjs-toggle-sidebar-button-label = បិទ/បើក​គ្រាប់​រំកិល
-pdfjs-document-outline-button =
-    .title = បង្ហាញ​គ្រោង​ឯកសារ (ចុច​ទ្វេ​ដង​ដើម្បី​ពង្រីក/បង្រួម​ធាតុ​ទាំងអស់)
-pdfjs-document-outline-button-label = គ្រោង​ឯកសារ
-pdfjs-attachments-button =
-    .title = បង្ហាញ​ឯកសារ​ភ្ជាប់
-pdfjs-attachments-button-label = ឯកសារ​ភ្ជាប់
-pdfjs-thumbs-button =
-    .title = បង្ហាញ​រូបភាព​តូចៗ
-pdfjs-thumbs-button-label = រួបភាព​តូចៗ
 pdfjs-findbar-button =
     .title = រក​នៅ​ក្នុង​ឯកសារ
 pdfjs-findbar-button-label = រក
@@ -149,18 +125,14 @@ pdfjs-findbar-button-label = រក
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = ទំព័រ { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = រូបភាព​តូច​របស់​ទំព័រ { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = រក
     .placeholder = រក​នៅ​ក្នុង​ឯកសារ...
+    .title = រក
 pdfjs-find-previous-button =
     .title = រក​ពាក្យ ឬ​ឃ្លា​ដែល​បាន​ជួប​មុន
 pdfjs-find-previous-button-label = មុន
@@ -182,9 +154,6 @@ pdfjs-page-scale-actual = ទំហំ​ជាក់ស្ដែង
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -214,10 +183,40 @@ pdfjs-web-fonts-disabled = បាន​បិទ​ពុម្ពអក្ស�
 
 ## Editing
 
+pdfjs-editor-highlight-button =
+    .title = រំលេច
+pdfjs-editor-highlight-button-label = រំលេច
+pdfjs-highlight-floating-button-label = រំលេច
 
 ## Alt-text dialog
 
+pdfjs-editor-alt-text-cancel-button = បោះបង់
 
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
+## Show all highlights
+## This is a toggle button to show/hide all the highlights.
 
+pdfjs-editor-highlight-show-all-button-label = បង្ហាញ​ទាំងអស់
+pdfjs-editor-highlight-show-all-button =
+    .title = បង្ហាញ​ទាំងអស់
+
+## New alt-text dialog
+## Group note for entire feature: Alternative text (alt text) helps when people can't see the image. This feature includes a tool to create alt text automatically using an AI model that works locally on the user's device to preserve privacy.
+
+pdfjs-editor-new-alt-text-not-now-button = មិន​មែន​ឥឡូវ
+
+## Dialog buttons
+
+pdfjs-editor-add-signature-cancel-button = បោះបង់
+
+##  Edit a comment dialog
+
+pdfjs-editor-edit-comment-dialog-cancel-button = បោះបង់
+
+## The view manager is a sidebar displaying different views:
+##  - thumbnails;
+##  - outline;
+##  - attachments;
+##  - layers.
+## The thumbnails view is used to edit the pdf: remove/insert pages, ...
+
+pdfjs-views-manager-pages-status-delete-button-label = លុប

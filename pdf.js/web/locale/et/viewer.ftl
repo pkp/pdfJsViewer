@@ -92,24 +92,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Dokumendi omadused…
 pdfjs-document-properties-file-name = Faili nimi:
 pdfjs-document-properties-file-size = Faili suurus:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KiB ({ $size_b } baiti)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MiB ({ $size_b } baiti)
 pdfjs-document-properties-title = Pealkiri:
 pdfjs-document-properties-author = Autor:
 pdfjs-document-properties-subject = Teema:
 pdfjs-document-properties-keywords = Märksõnad:
 pdfjs-document-properties-creation-date = Loodud:
 pdfjs-document-properties-modification-date = Muudetud:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date } { $time }
 pdfjs-document-properties-creator = Looja:
 pdfjs-document-properties-producer = Generaator:
 pdfjs-document-properties-version = Generaatori versioon:
@@ -155,23 +143,6 @@ pdfjs-printing-not-ready = Hoiatus: PDF pole printimiseks täielikult laaditud.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Näita külgriba
-pdfjs-toggle-sidebar-notification-button =
-    .title = Näita külgriba (dokument sisaldab sisukorda/manuseid/kihte)
-pdfjs-toggle-sidebar-button-label = Näita külgriba
-pdfjs-document-outline-button =
-    .title = Näita sisukorda (kõigi punktide laiendamiseks/ahendamiseks topeltklõpsa)
-pdfjs-document-outline-button-label = Näita sisukorda
-pdfjs-attachments-button =
-    .title = Näita manuseid
-pdfjs-attachments-button-label = Manused
-pdfjs-layers-button =
-    .title = Näita kihte (kõikide kihtide vaikeolekusse lähtestamiseks topeltklõpsa)
-pdfjs-layers-button-label = Kihid
-pdfjs-thumbs-button =
-    .title = Näita pisipilte
-pdfjs-thumbs-button-label = Pisipildid
 pdfjs-current-outline-item-button =
     .title = Otsi üles praegune kontuuriüksus
 pdfjs-current-outline-item-button-label = Praegune kontuuriüksus
@@ -184,18 +155,14 @@ pdfjs-additional-layers = Täiendavad kihid
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = { $page }. lehekülg
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = { $page }. lehekülje pisipilt
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Otsi
     .placeholder = Otsi dokumendist…
+    .title = Otsi
 pdfjs-find-previous-button =
     .title = Otsi fraasi eelmine esinemiskoht
 pdfjs-find-previous-button-label = Eelmine
@@ -237,10 +204,6 @@ pdfjs-rendering-error = Lehe renderdamisel esines viga.
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date } { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -256,13 +219,3 @@ pdfjs-password-invalid = Vigane parool. Palun proovi uuesti.
 pdfjs-password-ok-button = Sobib
 pdfjs-password-cancel-button = Loobu
 pdfjs-web-fonts-disabled = Veebifondid on keelatud: PDFiga kaasatud fonte pole võimalik kasutada.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

@@ -92,24 +92,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Փաստաթղթի յատկութիւնները…
 pdfjs-document-properties-file-name = Նիշքի անունը․
 pdfjs-document-properties-file-size = Նիշք չափը.
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } ԿԲ ({ $size_b } բայթ)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } ՄԲ ({ $size_b } բայթ)
 pdfjs-document-properties-title = Վերնագիր
 pdfjs-document-properties-author = Հեղինակ․
 pdfjs-document-properties-subject = առարկայ
 pdfjs-document-properties-keywords = Հիմնաբառեր
 pdfjs-document-properties-creation-date = Ստեղծման ամսաթիւ
 pdfjs-document-properties-modification-date = Փոփոխութեան ամսաթիւ.
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Ստեղծող
 pdfjs-document-properties-producer = PDF-ի Արտադրողը.
 pdfjs-document-properties-version = PDF-ի տարբերակը.
@@ -155,23 +143,6 @@ pdfjs-printing-not-ready = Զգուշացում. PDF֊ը ամբողջութեա�
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Փոխարկել կողային վահանակը
-pdfjs-toggle-sidebar-notification-button =
-    .title = Փոխանջատել կողմնասիւնը (փաստաթուղթը պարունակում է ուրուագիծ/կցորդներ/շերտեր)
-pdfjs-toggle-sidebar-button-label = Փոխարկել կողային վահանակը
-pdfjs-document-outline-button =
-    .title = Ցուցադրել փաստաթղթի ուրուագիծը (կրկնակի սեղմէք՝ միաւորները ընդարձակելու/կոծկելու համար)
-pdfjs-document-outline-button-label = Փաստաթղթի ուրուագիծ
-pdfjs-attachments-button =
-    .title = Ցուցադրել կցորդները
-pdfjs-attachments-button-label = Կցորդներ
-pdfjs-layers-button =
-    .title = Ցուցադրել շերտերը (կրկնահպել վերակայելու բոլոր շերտերը սկզբնադիր վիճակի)
-pdfjs-layers-button-label = Շերտեր
-pdfjs-thumbs-button =
-    .title = Ցուցադրել մանրապատկերը
-pdfjs-thumbs-button-label = Մանրապատկեր
 pdfjs-current-outline-item-button =
     .title = Գտէք ընթացիկ գծագրման տարրը
 pdfjs-current-outline-item-button-label = Ընթացիկ գծագրման տարր
@@ -184,18 +155,14 @@ pdfjs-additional-layers = Լրացուցիչ շերտեր
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Էջը { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Էջի մանրապատկերը { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Որոնում
     .placeholder = Գտնել փաստաթղթում…
+    .title = Որոնում
 pdfjs-find-previous-button =
     .title = Գտնել արտայայտութեան նախորդ արտայայտութիւնը
 pdfjs-find-previous-button-label = Նախորդը
@@ -237,10 +204,6 @@ pdfjs-rendering-error = Սխալ է տեղի ունեցել էջի մեկնաբ�
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -256,13 +219,3 @@ pdfjs-password-invalid = Գաղտնաբառը սխալ է: Կրկին փորձէ
 pdfjs-password-ok-button = Լաւ
 pdfjs-password-cancel-button = Չեղարկել
 pdfjs-web-fonts-disabled = Վեբ-տառատեսակները անջատուած են. հնարաւոր չէ աւգտագործել ներկառուցուած PDF տառատեսակները։
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

@@ -89,24 +89,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Sənəd xüsusiyyətləri…
 pdfjs-document-properties-file-name = Fayl adı:
 pdfjs-document-properties-file-size = Fayl ölçüsü:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } bayt)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } bayt)
 pdfjs-document-properties-title = Başlık:
 pdfjs-document-properties-author = Müəllif:
 pdfjs-document-properties-subject = Mövzu:
 pdfjs-document-properties-keywords = Açar sözlər:
 pdfjs-document-properties-creation-date = Yaradılış Tarixi :
 pdfjs-document-properties-modification-date = Dəyişdirilmə Tarixi :
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Yaradan:
 pdfjs-document-properties-producer = PDF yaradıcısı:
 pdfjs-document-properties-version = PDF versiyası:
@@ -152,23 +140,6 @@ pdfjs-printing-not-ready = Xəbərdarlıq: PDF çap üçün tam yüklənməyib.
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Yan Paneli Aç/Bağla
-pdfjs-toggle-sidebar-notification-button =
-    .title = Yan paneli çevir (sənəddə icmal/bağlamalar/laylar mövcuddur)
-pdfjs-toggle-sidebar-button-label = Yan Paneli Aç/Bağla
-pdfjs-document-outline-button =
-    .title = Sənədin eskizini göstər (bütün bəndləri açmaq/yığmaq üçün iki dəfə klikləyin)
-pdfjs-document-outline-button-label = Sənəd strukturu
-pdfjs-attachments-button =
-    .title = Bağlamaları göstər
-pdfjs-attachments-button-label = Bağlamalar
-pdfjs-layers-button =
-    .title = Layları göstər (bütün layları ilkin halına sıfırlamaq üçün iki dəfə klikləyin)
-pdfjs-layers-button-label = Laylar
-pdfjs-thumbs-button =
-    .title = Kiçik şəkilləri göstər
-pdfjs-thumbs-button-label = Kiçik şəkillər
 pdfjs-findbar-button =
     .title = Sənəddə Tap
 pdfjs-findbar-button-label = Tap
@@ -178,18 +149,14 @@ pdfjs-additional-layers = Əlavə laylar
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Səhifə{ $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = { $page } səhifəsinin kiçik vəziyyəti
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Tap
     .placeholder = Sənəddə tap…
+    .title = Tap
 pdfjs-find-previous-button =
     .title = Bir öncəki uyğun gələn sözü tapır
 pdfjs-find-previous-button-label = Geri
@@ -213,9 +180,6 @@ pdfjs-page-scale-actual = Hazırkı Həcm
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
 
-## PDF page
-
-
 ## Loading indicator messages
 
 pdfjs-loading-error = PDF yüklenərkən bir səhv yarandı.
@@ -226,10 +190,6 @@ pdfjs-rendering-error = Səhifə göstərilərkən səhv yarandı.
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -245,13 +205,3 @@ pdfjs-password-invalid = Parol səhvdir. Bir daha yoxlayın.
 pdfjs-password-ok-button = Tamam
 pdfjs-password-cancel-button = Ləğv et
 pdfjs-web-fonts-disabled = Web Şriftlər söndürülüb: yerləşdirilmiş PDF şriftlərini istifadə etmək mümkün deyil.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

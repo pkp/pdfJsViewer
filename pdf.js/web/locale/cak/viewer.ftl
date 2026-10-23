@@ -96,24 +96,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Taq richinil wuj…
 pdfjs-document-properties-file-name = Rub'i' yakb'äl:
 pdfjs-document-properties-file-size = Runimilem yakb'äl:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } bytes)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } bytes)
 pdfjs-document-properties-title = B'i'aj:
 pdfjs-document-properties-author = B'anel:
 pdfjs-document-properties-subject = Taqikil:
 pdfjs-document-properties-keywords = Kixe'el taq tzij:
 pdfjs-document-properties-creation-date = Ruq'ijul xtz'uk:
 pdfjs-document-properties-modification-date = Ruq'ijul xjalwachïx:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Q'inonel:
 pdfjs-document-properties-producer = PDF b'anöy:
 pdfjs-document-properties-version = PDF ruwäch:
@@ -159,23 +147,6 @@ pdfjs-printing-not-ready = Rutzijol k'ayewal: Ri PDF man xusamajij ta ronojel ri
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Tijal ri ajxikin kajtz'ik
-pdfjs-toggle-sidebar-notification-button =
-    .title = Tik'ex ri ajxikin yuqkajtz'ik (ri wuj eruk'wan taq ruchi'/taqo/kuchuj)
-pdfjs-toggle-sidebar-button-label = Tijal ri ajxikin kajtz'ik
-pdfjs-document-outline-button =
-    .title = Tik'ut pe ruch'akulal wuj (kamul-pitz'oj richin nirik'/nich'utinirisäx ronojel ruch'akulal)
-pdfjs-document-outline-button-label = Ruch'akulal wuj
-pdfjs-attachments-button =
-    .title = Kek'ut pe ri taq taqoj
-pdfjs-attachments-button-label = Taq taqoj
-pdfjs-layers-button =
-    .title = Kek'ut taq Kuchuj (ka'i'-pitz' richin yetzolïx ronojel ri taq kuchuj e k'o wi)
-pdfjs-layers-button-label = Taq kuchuj
-pdfjs-thumbs-button =
-    .title = Kek'ut pe taq ch'utiq
-pdfjs-thumbs-button-label = Koköj
 pdfjs-current-outline-item-button =
     .title = Kekanöx  Taq Ch'akulal Kik'wan Chib'äl
 pdfjs-current-outline-item-button-label = Taq Ch'akulal Kik'wan Chib'äl
@@ -188,18 +159,14 @@ pdfjs-additional-layers = Tz'aqat ta Kuchuj
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Ruxaq { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Ruch'utinirisaxik ruxaq { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Tikanöx
     .placeholder = Tikanöx pa wuj…
+    .title = Tikanöx
 pdfjs-find-previous-button =
     .title = Tib'an b'enam pa ri jun kan q'aptzij xilitäj
 pdfjs-find-previous-button-label = Jun kan
@@ -241,10 +208,6 @@ pdfjs-rendering-error = Xk'ulwachitäj jun sachoj toq ninuk'wachij ri ruxaq.
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -269,23 +232,12 @@ pdfjs-editor-free-text-button-label = Rucholajem tz'ib'
 pdfjs-editor-ink-button =
     .title = Tiwachib'ëx
 pdfjs-editor-ink-button-label = Tiwachib'ëx
+
+##
+
 # Editor Parameters
 pdfjs-editor-free-text-color-input = B'onil
 pdfjs-editor-free-text-size-input = Nimilem
 pdfjs-editor-ink-color-input = B'onil
 pdfjs-editor-ink-thickness-input = Rupimil
 pdfjs-editor-ink-opacity-input = Q'equmal
-pdfjs-free-text =
-    .aria-label = Nuk'unel tz'ib'atzij
-pdfjs-free-text-default-content = Titikitisäx rutz'ib'axik…
-pdfjs-ink =
-    .aria-label = Nuk'unel wachib'äl
-pdfjs-ink-canvas =
-    .aria-label = Wachib'äl nuk'un ruma okisaxel
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

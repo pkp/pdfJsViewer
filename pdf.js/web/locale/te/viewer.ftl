@@ -72,24 +72,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = పత్రము లక్షణాలు...
 pdfjs-document-properties-file-name = దస్త్రం పేరు:
 pdfjs-document-properties-file-size = దస్త్రం పరిమాణం:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } KB ({ $size_b } bytes)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } bytes)
 pdfjs-document-properties-title = శీర్షిక:
 pdfjs-document-properties-author = మూలకర్త:
 pdfjs-document-properties-subject = విషయం:
 pdfjs-document-properties-keywords = కీ పదాలు:
 pdfjs-document-properties-creation-date = సృష్టించిన తేదీ:
 pdfjs-document-properties-modification-date = సవరించిన తేదీ:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = సృష్టికర్త:
 pdfjs-document-properties-producer = PDF ఉత్పాదకి:
 pdfjs-document-properties-version = PDF వర్షన్:
@@ -132,19 +120,6 @@ pdfjs-printing-not-ready = హెచ్చరిక: ముద్రణ కొ�
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = పక్కపట్టీ మార్చు
-pdfjs-toggle-sidebar-button-label = పక్కపట్టీ మార్చు
-pdfjs-document-outline-button =
-    .title = పత్రము రూపము చూపించు (డబుల్ క్లిక్ చేసి అన్ని అంశాలను విస్తరించు/కూల్చు)
-pdfjs-document-outline-button-label = పత్రము అవుట్‌లైన్
-pdfjs-attachments-button =
-    .title = అనుబంధాలు చూపు
-pdfjs-attachments-button-label = అనుబంధాలు
-pdfjs-layers-button-label = పొరలు
-pdfjs-thumbs-button =
-    .title = థంబ్‌నైల్స్ చూపు
-pdfjs-thumbs-button-label = థంబ్‌నైల్స్
 pdfjs-findbar-button =
     .title = పత్రములో కనుగొనుము
 pdfjs-findbar-button-label = కనుగొను
@@ -154,18 +129,14 @@ pdfjs-additional-layers = అదనపు పొరలు
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = పేజీ { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = { $page } పేజీ నఖచిత్రం
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = కనుగొను
     .placeholder = పత్రములో కనుగొను…
+    .title = కనుగొను
 pdfjs-find-previous-button =
     .title = పదం యొక్క ముందు సంభవాన్ని కనుగొను
 pdfjs-find-previous-button-label = మునుపటి
@@ -189,9 +160,6 @@ pdfjs-page-scale-actual = యథార్ధ పరిమాణం
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
 
-## PDF page
-
-
 ## Loading indicator messages
 
 pdfjs-loading-error = PDF లోడవుచున్నప్పుడు ఒక దోషం ఎదురైంది.
@@ -202,10 +170,6 @@ pdfjs-rendering-error = పేజీను రెండర్ చేయుటల
 
 ## Annotations
 
-# Variables:
-#   $date (Date) - the modification date of the annotation
-#   $time (Time) - the modification time of the annotation
-pdfjs-annotation-date-string = { $date }, { $time }
 # .alt: This is used as a tooltip.
 # Variables:
 #   $type (String) - an annotation type from a list defined in the PDF spec
@@ -222,7 +186,7 @@ pdfjs-password-ok-button = సరే
 pdfjs-password-cancel-button = రద్దుచేయి
 pdfjs-web-fonts-disabled = వెబ్ ఫాంట్లు అచేతనించబడెను: ఎంబెడెడ్ PDF ఫాంట్లు ఉపయోగించలేక పోయింది.
 
-## Editing
+##
 
 # Editor Parameters
 pdfjs-editor-free-text-color-input = రంగు
@@ -230,10 +194,3 @@ pdfjs-editor-free-text-size-input = పరిమాణం
 pdfjs-editor-ink-color-input = రంగు
 pdfjs-editor-ink-thickness-input = మందం
 pdfjs-editor-ink-opacity-input = అకిరణ్యత
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-

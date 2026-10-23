@@ -89,24 +89,12 @@ pdfjs-document-properties-button =
 pdfjs-document-properties-button-label = Propietæ do documento…
 pdfjs-document-properties-file-name = Nomme schedaio:
 pdfjs-document-properties-file-size = Dimenscion schedaio:
-# Variables:
-#   $size_kb (Number) - the PDF file size in kilobytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-kb = { $size_kb } kB ({ $size_b } byte)
-# Variables:
-#   $size_mb (Number) - the PDF file size in megabytes
-#   $size_b (Number) - the PDF file size in bytes
-pdfjs-document-properties-mb = { $size_mb } MB ({ $size_b } byte)
 pdfjs-document-properties-title = Titolo:
 pdfjs-document-properties-author = Aoto:
 pdfjs-document-properties-subject = Ogetto:
 pdfjs-document-properties-keywords = Paròlle ciave:
 pdfjs-document-properties-creation-date = Dæta creaçion:
 pdfjs-document-properties-modification-date = Dæta cangiamento:
-# Variables:
-#   $date (Date) - the creation/modification date of the PDF file
-#   $time (Time) - the creation/modification time of the PDF file
-pdfjs-document-properties-date-string = { $date }, { $time }
 pdfjs-document-properties-creator = Aotô originale:
 pdfjs-document-properties-producer = Produtô PDF:
 pdfjs-document-properties-version = Verscion PDF:
@@ -152,18 +140,6 @@ pdfjs-printing-not-ready = Atençion: o PDF o no l'é ancon caregou conpletament
 
 ## Tooltips and alt text for side panel toolbar buttons
 
-pdfjs-toggle-sidebar-button =
-    .title = Ativa/dizativa bara de scianco
-pdfjs-toggle-sidebar-button-label = Ativa/dizativa bara de scianco
-pdfjs-document-outline-button =
-    .title = Fanni vedde o contorno do documento (scicca doggio pe espande/ridue tutti i elementi)
-pdfjs-document-outline-button-label = Contorno do documento
-pdfjs-attachments-button =
-    .title = Fanni vedde alegæ
-pdfjs-attachments-button-label = Alegæ
-pdfjs-thumbs-button =
-    .title = Mostra miniatue
-pdfjs-thumbs-button-label = Miniatue
 pdfjs-findbar-button =
     .title = Treuva into documento
 pdfjs-findbar-button-label = Treuva
@@ -172,18 +148,14 @@ pdfjs-findbar-button-label = Treuva
 
 # Variables:
 #   $page (Number) - the page number
-pdfjs-thumb-page-title =
-    .title = Pagina { $page }
-# Variables:
-#   $page (Number) - the page number
 pdfjs-thumb-page-canvas =
     .aria-label = Miniatua da pagina { $page }
 
 ## Find panel button title and messages
 
 pdfjs-find-input =
-    .title = Treuva
     .placeholder = Treuva into documento…
+    .title = Treuva
 pdfjs-find-previous-button =
     .title = Treuva a ripetiçion precedente do testo da çercâ
 pdfjs-find-previous-button-label = Precedente
@@ -206,9 +178,6 @@ pdfjs-page-scale-actual = Dimenscioin efetive
 # Variables:
 #   $scale (Number) - percent value for page scale
 pdfjs-page-scale-percent = { $scale }%
-
-## PDF page
-
 
 ## Loading indicator messages
 
@@ -235,13 +204,3 @@ pdfjs-password-invalid = Paròlla segreta sbalia. Preuva torna.
 pdfjs-password-ok-button = Va ben
 pdfjs-password-cancel-button = Anulla
 pdfjs-web-fonts-disabled = I font do web en dizativæ: inposcibile adeuviâ i carateri do PDF.
-
-## Editing
-
-
-## Alt-text dialog
-
-
-## Editor resizers
-## This is used in an aria label to help to understand the role of the resizer.
-
