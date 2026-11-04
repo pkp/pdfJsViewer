@@ -109,11 +109,14 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 $title = $galleyPublication->getLocalizedTitle(null, 'html');
             }
 
+            $isLatestPublication = $submission->getData('currentPublicationId') === $galley->getData('publicationId');
             $pdfUrl = $request->url(
                 null,
                 $submissionNoun,
                 'download',
-                [$submission->getBestId(), $galley->getBestGalleyId(), $galley->getFile()->getId()]
+                $isLatestPublication
+                    ? [$submission->getBestId(), $galley->getBestGalleyId(), $galley->getFile()->getId()]
+                    : [$submission->getBestId(), 'version', $galley->getData('publicationId'), $galley->getBestGalleyId(), $galley->getFile()->getId()]
             );
 
             $parentUrl = $request->url(null, $submissionNoun, 'view', [$submission->getBestId()]);
@@ -138,7 +141,7 @@ class PdfJsViewerPlugin extends \PKP\plugins\GenericPlugin
                 'bestId' => $galleyPublication->getData('urlPath') ?? $submission->getId(),
                 'galley' => $galley,
                 'currentVersionString' => $application->getCurrentVersion()->getVersionString(false),
-                'isLatestPublication' => $submission->getData('currentPublicationId') === $galley->getData('publicationId'),
+                'isLatestPublication' => $isLatestPublication,
                 'galleyPublication' => $galleyPublication,
                 'title' => $title,
                 'pdfUrl' => $pdfUrl,
